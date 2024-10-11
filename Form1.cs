@@ -1,4 +1,6 @@
-﻿using ReaLTaiizor.Controls;
+﻿using ReaLTaiizor.Child.Crown;
+using ReaLTaiizor.Controls;
+using ReaLTaiizor.Enum.Crown;
 using ReaLTaiizor.Forms;
 using System;
 using System.Collections.Generic;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsCleanUP.modules.systemgarbage;
 using WindowsCleanUP.utils;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
@@ -22,6 +25,15 @@ namespace WindowsCleanUP
         public Form1()
         {
             InitializeComponent();
+            scanParrotFlatProgressBar.Value = 0;
+            InitializeCheckBoxTags();
+        }
+
+        private void InitializeCheckBoxTags()
+        {
+            tempHopeSwitch.Text = "";
+            tempHopeSwitch.Tag =new Action(() => TempFile.scanFile(tempHopeSwitch));
+
         }
 
         private void bigLabel1_Click(object sender, EventArgs e)
@@ -57,6 +69,27 @@ namespace WindowsCleanUP
         private void removeAllForeverButton_Click(object sender, EventArgs e)
         {
             Utils.operateAllButton_Click(sender, false);
+        }
+
+        private void scanForeverButton_Click(object sender, EventArgs e)
+        {
+            int length = Utils.getSwitchLength(sender);
+            if (length != 0) {
+                scanParrotFlatProgressBar.MaxValue = length;
+            }
+            var tempFileInfo=TempFile.scanFile(tempHopeSwitch);
+            int tempFileLength = tempFileInfo.FileCount;
+            string totalSize= tempFileInfo.TotalSize;
+            string tempFileAvaInfo= tempFileLength + "项" + "[" + totalSize + "]";
+            //crownLabel1.Text = tempFileAvaInfo;
+          
+            Console.WriteLine(totalSize);
+        }
+
+        private void clearForeverButton_Click(object sender, EventArgs e)
+        {
+            scanParrotFlatProgressBar.Value += 1;
+           // tempFileLabel.Text = "ssssssssss";
         }
     }
 }

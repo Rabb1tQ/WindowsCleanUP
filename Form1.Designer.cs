@@ -78,14 +78,13 @@
             this.browserRemoveAllForeverButton = new ReaLTaiizor.Controls.ForeverButton();
             this.browserSelectAllForeverButton = new ReaLTaiizor.Controls.ForeverButton();
             this.removeAllForeverButton = new ReaLTaiizor.Controls.ForeverButton();
-            this.foreverButton8 = new ReaLTaiizor.Controls.ForeverButton();
+            this.clearForeverButton = new ReaLTaiizor.Controls.ForeverButton();
             this.selectAllForeverButton = new ReaLTaiizor.Controls.ForeverButton();
             this.systemForeverGroupBox = new ReaLTaiizor.Controls.ForeverGroupBox();
             this.systemRemoveAllForeverButton = new ReaLTaiizor.Controls.ForeverButton();
             this.systemSelectAllForeverButton = new ReaLTaiizor.Controls.ForeverButton();
             this.thunderLabel1 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.tempHopeSwitch1 = new ReaLTaiizor.Controls.HopeSwitch();
-            this.tempLabel = new ReaLTaiizor.Controls.ThunderLabel();
+            this.tempHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
             this.hopeSwitch1 = new ReaLTaiizor.Controls.HopeSwitch();
             this.thunderLabel18 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel3 = new ReaLTaiizor.Controls.ThunderLabel();
@@ -116,8 +115,8 @@
             this.thunderLabel11 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel8 = new ReaLTaiizor.Controls.ThunderLabel();
             this.hopeSwitch6 = new ReaLTaiizor.Controls.HopeSwitch();
-            this.foreverButton6 = new ReaLTaiizor.Controls.ForeverButton();
-            this.parrotFlatProgressBar1 = new ReaLTaiizor.Controls.ParrotFlatProgressBar();
+            this.scanForeverButton = new ReaLTaiizor.Controls.ForeverButton();
+            this.scanParrotFlatProgressBar = new ReaLTaiizor.Controls.ParrotFlatProgressBar();
             this.SystemControlTab = new System.Windows.Forms.TabPage();
             this.parrotForm1.WorkingArea.SuspendLayout();
             this.parrotForm1.SuspendLayout();
@@ -206,11 +205,11 @@
             this.CleanTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CleanTab.Controls.Add(this.browserForeverGroupBox2);
             this.CleanTab.Controls.Add(this.removeAllForeverButton);
-            this.CleanTab.Controls.Add(this.foreverButton8);
+            this.CleanTab.Controls.Add(this.clearForeverButton);
             this.CleanTab.Controls.Add(this.selectAllForeverButton);
             this.CleanTab.Controls.Add(this.systemForeverGroupBox);
-            this.CleanTab.Controls.Add(this.foreverButton6);
-            this.CleanTab.Controls.Add(this.parrotFlatProgressBar1);
+            this.CleanTab.Controls.Add(this.scanForeverButton);
+            this.CleanTab.Controls.Add(this.scanParrotFlatProgressBar);
             this.CleanTab.Font = new System.Drawing.Font("黑体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CleanTab.Location = new System.Drawing.Point(139, 4);
             this.CleanTab.Name = "CleanTab";
@@ -793,19 +792,20 @@
             this.removeAllForeverButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.removeAllForeverButton.Click += new System.EventHandler(this.removeAllForeverButton_Click);
             // 
-            // foreverButton8
+            // clearForeverButton
             // 
-            this.foreverButton8.BackColor = System.Drawing.Color.Transparent;
-            this.foreverButton8.BaseColor = System.Drawing.Color.Red;
-            this.foreverButton8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.foreverButton8.Font = new System.Drawing.Font("宋体", 12F);
-            this.foreverButton8.Location = new System.Drawing.Point(930, 582);
-            this.foreverButton8.Name = "foreverButton8";
-            this.foreverButton8.Rounded = true;
-            this.foreverButton8.Size = new System.Drawing.Size(57, 23);
-            this.foreverButton8.TabIndex = 52;
-            this.foreverButton8.Text = "删除";
-            this.foreverButton8.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.clearForeverButton.BackColor = System.Drawing.Color.Transparent;
+            this.clearForeverButton.BaseColor = System.Drawing.Color.Red;
+            this.clearForeverButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearForeverButton.Font = new System.Drawing.Font("宋体", 12F);
+            this.clearForeverButton.Location = new System.Drawing.Point(930, 582);
+            this.clearForeverButton.Name = "clearForeverButton";
+            this.clearForeverButton.Rounded = true;
+            this.clearForeverButton.Size = new System.Drawing.Size(57, 23);
+            this.clearForeverButton.TabIndex = 52;
+            this.clearForeverButton.Text = "删除";
+            this.clearForeverButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.clearForeverButton.Click += new System.EventHandler(this.clearForeverButton_Click);
             // 
             // selectAllForeverButton
             // 
@@ -831,8 +831,7 @@
             this.systemForeverGroupBox.Controls.Add(this.systemRemoveAllForeverButton);
             this.systemForeverGroupBox.Controls.Add(this.systemSelectAllForeverButton);
             this.systemForeverGroupBox.Controls.Add(this.thunderLabel1);
-            this.systemForeverGroupBox.Controls.Add(this.tempHopeSwitch1);
-            this.systemForeverGroupBox.Controls.Add(this.tempLabel);
+            this.systemForeverGroupBox.Controls.Add(this.tempHopeSwitch);
             this.systemForeverGroupBox.Controls.Add(this.hopeSwitch1);
             this.systemForeverGroupBox.Controls.Add(this.thunderLabel18);
             this.systemForeverGroupBox.Controls.Add(this.thunderLabel3);
@@ -914,28 +913,19 @@
             this.thunderLabel1.TabIndex = 11;
             this.thunderLabel1.Text = "临时文件";
             // 
-            // tempHopeSwitch1
+            // tempHopeSwitch
             // 
-            this.tempHopeSwitch1.AutoSize = true;
-            this.tempHopeSwitch1.BaseColor = System.Drawing.Color.White;
-            this.tempHopeSwitch1.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.tempHopeSwitch1.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
-            this.tempHopeSwitch1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tempHopeSwitch1.Location = new System.Drawing.Point(120, 39);
-            this.tempHopeSwitch1.Name = "tempHopeSwitch1";
-            this.tempHopeSwitch1.Size = new System.Drawing.Size(40, 20);
-            this.tempHopeSwitch1.TabIndex = 10;
-            this.tempHopeSwitch1.Text = "hopeSwitch1";
-            this.tempHopeSwitch1.UseVisualStyleBackColor = true;
-            // 
-            // tempLabel
-            // 
-            this.tempLabel.BackColor = System.Drawing.Color.Transparent;
-            this.tempLabel.ForeColor = System.Drawing.Color.IndianRed;
-            this.tempLabel.Location = new System.Drawing.Point(167, 43);
-            this.tempLabel.Name = "tempLabel";
-            this.tempLabel.Size = new System.Drawing.Size(96, 16);
-            this.tempLabel.TabIndex = 12;
+            this.tempHopeSwitch.AutoSize = true;
+            this.tempHopeSwitch.BaseColor = System.Drawing.Color.White;
+            this.tempHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.tempHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
+            this.tempHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tempHopeSwitch.Location = new System.Drawing.Point(120, 39);
+            this.tempHopeSwitch.Name = "tempHopeSwitch";
+            this.tempHopeSwitch.Size = new System.Drawing.Size(40, 20);
+            this.tempHopeSwitch.TabIndex = 10;
+            this.tempHopeSwitch.Text = "hopeSwitch1";
+            this.tempHopeSwitch.UseVisualStyleBackColor = true;
             // 
             // hopeSwitch1
             // 
@@ -1267,44 +1257,45 @@
             this.hopeSwitch6.Text = "hopeSwitch6";
             this.hopeSwitch6.UseVisualStyleBackColor = true;
             // 
-            // foreverButton6
+            // scanForeverButton
             // 
-            this.foreverButton6.BackColor = System.Drawing.Color.Transparent;
-            this.foreverButton6.BaseColor = System.Drawing.Color.DeepSkyBlue;
-            this.foreverButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.foreverButton6.Font = new System.Drawing.Font("宋体", 12F);
-            this.foreverButton6.Location = new System.Drawing.Point(867, 582);
-            this.foreverButton6.Name = "foreverButton6";
-            this.foreverButton6.Rounded = true;
-            this.foreverButton6.Size = new System.Drawing.Size(57, 23);
-            this.foreverButton6.TabIndex = 51;
-            this.foreverButton6.Text = "扫描";
-            this.foreverButton6.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.scanForeverButton.BackColor = System.Drawing.Color.Transparent;
+            this.scanForeverButton.BaseColor = System.Drawing.Color.DeepSkyBlue;
+            this.scanForeverButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.scanForeverButton.Font = new System.Drawing.Font("宋体", 12F);
+            this.scanForeverButton.Location = new System.Drawing.Point(867, 582);
+            this.scanForeverButton.Name = "scanForeverButton";
+            this.scanForeverButton.Rounded = true;
+            this.scanForeverButton.Size = new System.Drawing.Size(57, 23);
+            this.scanForeverButton.TabIndex = 51;
+            this.scanForeverButton.Text = "扫描";
+            this.scanForeverButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.scanForeverButton.Click += new System.EventHandler(this.scanForeverButton_Click);
             // 
-            // parrotFlatProgressBar1
+            // scanParrotFlatProgressBar
             // 
-            this.parrotFlatProgressBar1.BarStyle = ReaLTaiizor.Controls.ParrotFlatProgressBar.Style.Material;
-            this.parrotFlatProgressBar1.BorderColor = System.Drawing.Color.Black;
-            this.parrotFlatProgressBar1.Colors = ((System.Collections.Generic.List<System.Drawing.Color>)(resources.GetObject("parrotFlatProgressBar1.Colors")));
-            this.parrotFlatProgressBar1.CompleteBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(250)))));
-            this.parrotFlatProgressBar1.CompleteColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(119)))), ((int)(((byte)(215)))));
-            this.parrotFlatProgressBar1.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.parrotFlatProgressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.parrotFlatProgressBar1.IncompletedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.parrotFlatProgressBar1.InocmpletedColor = System.Drawing.Color.White;
-            this.parrotFlatProgressBar1.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.parrotFlatProgressBar1.Location = new System.Drawing.Point(3, 611);
-            this.parrotFlatProgressBar1.MaxValue = 100;
-            this.parrotFlatProgressBar1.Name = "parrotFlatProgressBar1";
-            this.parrotFlatProgressBar1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.parrotFlatProgressBar1.Positions = ((System.Collections.Generic.List<float>)(resources.GetObject("parrotFlatProgressBar1.Positions")));
-            this.parrotFlatProgressBar1.ShowBorder = true;
-            this.parrotFlatProgressBar1.Size = new System.Drawing.Size(986, 22);
-            this.parrotFlatProgressBar1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.parrotFlatProgressBar1.TabIndex = 8;
-            this.parrotFlatProgressBar1.Text = "parrotFlatProgressBar1";
-            this.parrotFlatProgressBar1.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            this.parrotFlatProgressBar1.Value = 50;
+            this.scanParrotFlatProgressBar.BarStyle = ReaLTaiizor.Controls.ParrotFlatProgressBar.Style.Material;
+            this.scanParrotFlatProgressBar.BorderColor = System.Drawing.Color.Black;
+            this.scanParrotFlatProgressBar.Colors = ((System.Collections.Generic.List<System.Drawing.Color>)(resources.GetObject("scanParrotFlatProgressBar.Colors")));
+            this.scanParrotFlatProgressBar.CompleteBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(250)))));
+            this.scanParrotFlatProgressBar.CompleteColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(119)))), ((int)(((byte)(215)))));
+            this.scanParrotFlatProgressBar.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.scanParrotFlatProgressBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.scanParrotFlatProgressBar.IncompletedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.scanParrotFlatProgressBar.InocmpletedColor = System.Drawing.Color.White;
+            this.scanParrotFlatProgressBar.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.scanParrotFlatProgressBar.Location = new System.Drawing.Point(3, 611);
+            this.scanParrotFlatProgressBar.MaxValue = 100;
+            this.scanParrotFlatProgressBar.Name = "scanParrotFlatProgressBar";
+            this.scanParrotFlatProgressBar.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.scanParrotFlatProgressBar.Positions = ((System.Collections.Generic.List<float>)(resources.GetObject("scanParrotFlatProgressBar.Positions")));
+            this.scanParrotFlatProgressBar.ShowBorder = true;
+            this.scanParrotFlatProgressBar.Size = new System.Drawing.Size(986, 22);
+            this.scanParrotFlatProgressBar.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            this.scanParrotFlatProgressBar.TabIndex = 8;
+            this.scanParrotFlatProgressBar.Text = "parrotFlatProgressBar1";
+            this.scanParrotFlatProgressBar.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            this.scanParrotFlatProgressBar.Value = 50;
             // 
             // SystemControlTab
             // 
@@ -1349,14 +1340,13 @@
         private System.Windows.Forms.TabPage SystemControlTab;
         private System.Windows.Forms.TabPage CleanTab;
         private ReaLTaiizor.Controls.ForeverButton removeAllForeverButton;
-        private ReaLTaiizor.Controls.ForeverButton foreverButton8;
+        private ReaLTaiizor.Controls.ForeverButton clearForeverButton;
         private ReaLTaiizor.Controls.ForeverButton selectAllForeverButton;
         private ReaLTaiizor.Controls.ForeverGroupBox systemForeverGroupBox;
         private ReaLTaiizor.Controls.ForeverButton systemRemoveAllForeverButton;
         private ReaLTaiizor.Controls.ForeverButton systemSelectAllForeverButton;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel1;
-        private ReaLTaiizor.Controls.HopeSwitch tempHopeSwitch1;
-        private ReaLTaiizor.Controls.ThunderLabel tempLabel;
+        private ReaLTaiizor.Controls.HopeSwitch tempHopeSwitch;
         private ReaLTaiizor.Controls.HopeSwitch hopeSwitch1;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel18;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel3;
@@ -1387,8 +1377,8 @@
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel11;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel8;
         private ReaLTaiizor.Controls.HopeSwitch hopeSwitch6;
-        private ReaLTaiizor.Controls.ForeverButton foreverButton6;
-        private ReaLTaiizor.Controls.ParrotFlatProgressBar parrotFlatProgressBar1;
+        private ReaLTaiizor.Controls.ForeverButton scanForeverButton;
+        private ReaLTaiizor.Controls.ParrotFlatProgressBar scanParrotFlatProgressBar;
         private ReaLTaiizor.Controls.ForeverGroupBox browserForeverGroupBox2;
         private ReaLTaiizor.Controls.ParrotGroupBox chromeParrotGroupBox1;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel22;
