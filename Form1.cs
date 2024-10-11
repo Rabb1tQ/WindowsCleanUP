@@ -1,4 +1,5 @@
-﻿using ReaLTaiizor.Forms;
+﻿using ReaLTaiizor.Controls;
+using ReaLTaiizor.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsCleanUP.utils;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace WindowsCleanUP
 {
@@ -24,6 +27,36 @@ namespace WindowsCleanUP
         private void bigLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void systemSelectAllForeverButton_Click(object sender, EventArgs e)
+        {
+            Utils.operateAllButton_Click(sender, true);
+        }
+
+        private void systemRemoveAllForeverButton_Click(object sender, EventArgs e)
+        {
+            Utils.operateAllButton_Click(sender, false);
+        }
+
+        private void browserSelectAllForeverButton_Click(object sender, EventArgs e)
+        {
+            Utils.operateAllButton_Click(sender, true);
+        }
+
+        private void browserRemoveAllForeverButton_Click(object sender, EventArgs e)
+        {
+            Utils.operateAllButton_Click(sender, false);
+        }
+
+        private void selectAllForeverButton_Click(object sender, EventArgs e)
+        {
+            Utils.operateAllButton_Click(sender, true);
+        }
+
+        private void removeAllForeverButton_Click(object sender, EventArgs e)
+        {
+            Utils.operateAllButton_Click(sender, false);
         }
     }
 }
