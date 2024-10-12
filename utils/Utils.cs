@@ -1,7 +1,8 @@
 ﻿using ReaLTaiizor.Controls;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace WindowsCleanUP.utils
 {
@@ -46,7 +47,7 @@ namespace WindowsCleanUP.utils
             foreach (Control control in parentControl.Controls)
             {
                 // 如果找到的是 CheckBox，则计数加一
-                if (control is HopeSwitch&& ((HopeSwitch)control).Checked==true)
+                if (control is HopeSwitch && ((HopeSwitch)control).Checked == true)
                 {
                     checkBoxCount++;
                 }
@@ -74,5 +75,21 @@ namespace WindowsCleanUP.utils
             // Return the formatted file size string
             return $"{formattedSize:0.##}{sizes[order]}";
         }
+
+        public static void deleteFileBatch(List<string> files)
+        {
+            foreach (string file in files)
+            {
+                try
+                {
+                    File.Delete(file);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"无法删除文件: {file}. 错误: {ex.Message}");
+                }
+            }
+        }
+
     }
 }
