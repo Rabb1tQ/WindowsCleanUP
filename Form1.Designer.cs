@@ -33,8 +33,38 @@
             this.tabPage1 = new ReaLTaiizor.Controls.TabPage();
             this.CleanTab = new System.Windows.Forms.TabPage();
             this.browserForeverGroupBox2 = new ReaLTaiizor.Controls.ForeverGroupBox();
+            this.fireFoxParrotGroupBox3 = new ReaLTaiizor.Controls.ParrotGroupBox();
+            this.firefoxHistoryForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
+            this.firefoxCookieForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
+            this.firefoxCacheForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
+            this.thunderLabel14 = new ReaLTaiizor.Controls.ThunderLabel();
+            this.firefoxHistoryHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
+            this.thunderLabel16 = new ReaLTaiizor.Controls.ThunderLabel();
+            this.firefoxCookieHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
+            this.thunderLabel18 = new ReaLTaiizor.Controls.ThunderLabel();
+            this.firefoxCacheHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
             this.edgeParrotGroupBox2 = new ReaLTaiizor.Controls.ParrotGroupBox();
+            this.edgeUpdateCacheForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
+            this.edgeCookieForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
+            this.edgePasswordForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
+            this.edgeHistoryforeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
+            this.edgeCacheForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
+            this.thunderLabel2 = new ReaLTaiizor.Controls.ThunderLabel();
+            this.edgeUpdateCacheHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
+            this.thunderLabel6 = new ReaLTaiizor.Controls.ThunderLabel();
+            this.edgeCookieHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
+            this.thunderLabel8 = new ReaLTaiizor.Controls.ThunderLabel();
+            this.edgePasswordHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
+            this.edgeCacheHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
+            this.thunderLabel10 = new ReaLTaiizor.Controls.ThunderLabel();
+            this.thunderLabel12 = new ReaLTaiizor.Controls.ThunderLabel();
+            this.edgeHistoryHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
             this.chromeParrotGroupBox1 = new ReaLTaiizor.Controls.ParrotGroupBox();
+            this.chromeUpdateCacheForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
+            this.chromeCookieForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
+            this.chromePasswordForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
+            this.chromeHilstoryForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
+            this.chromeCacheForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
             this.thunderLabel23 = new ReaLTaiizor.Controls.ThunderLabel();
             this.chromeUpdateCacheHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
             this.thunderLabel25 = new ReaLTaiizor.Controls.ThunderLabel();
@@ -69,7 +99,7 @@
             this.recentFileHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
             this.thunderLabel3 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel19 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.hopeSwitch10 = new ReaLTaiizor.Controls.HopeSwitch();
+            this.registryHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
             this.thumbCacheHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
             this.thunderLabel4 = new ReaLTaiizor.Controls.ThunderLabel();
             this.thunderLabel17 = new ReaLTaiizor.Controls.ThunderLabel();
@@ -89,45 +119,15 @@
             this.scanForeverButton = new ReaLTaiizor.Controls.ForeverButton();
             this.scanParrotFlatProgressBar = new ReaLTaiizor.Controls.ParrotFlatProgressBar();
             this.SystemControlTab = new System.Windows.Forms.TabPage();
-            this.fireFoxParrotGroupBox3 = new ReaLTaiizor.Controls.ParrotGroupBox();
-            this.chromeCacheForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.chromeHilstoryForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.chromePasswordForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.chromeCookieForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.chromeUpdateCacheForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.edgeUpdateCacheForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.edgeCookieForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.edgePasswordForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.edgeHistoryforeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.edgeCacheForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.thunderLabel2 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.edgeUpdateCacheHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
-            this.thunderLabel6 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.edgeCookieHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
-            this.thunderLabel8 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.edgePasswordHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
-            this.edgeCacheHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
-            this.thunderLabel10 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.thunderLabel12 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.edgeHistoryHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
-            this.firefoxHistoryForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.firefoxCookieForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.firefoxCacheForeverLabel = new ReaLTaiizor.Controls.ForeverLabel();
-            this.thunderLabel14 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.firefoxHistoryHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
-            this.thunderLabel16 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.firefoxCookieHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
-            this.thunderLabel18 = new ReaLTaiizor.Controls.ThunderLabel();
-            this.firefoxCacheHopeSwitch = new ReaLTaiizor.Controls.HopeSwitch();
             this.parrotForm1.WorkingArea.SuspendLayout();
             this.parrotForm1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.CleanTab.SuspendLayout();
             this.browserForeverGroupBox2.SuspendLayout();
+            this.fireFoxParrotGroupBox3.SuspendLayout();
             this.edgeParrotGroupBox2.SuspendLayout();
             this.chromeParrotGroupBox1.SuspendLayout();
             this.systemForeverGroupBox.SuspendLayout();
-            this.fireFoxParrotGroupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // parrotForm1
@@ -241,6 +241,136 @@
             this.browserForeverGroupBox2.Text = "浏览器垃圾";
             this.browserForeverGroupBox2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             // 
+            // fireFoxParrotGroupBox3
+            // 
+            this.fireFoxParrotGroupBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.fireFoxParrotGroupBox3.BorderWidth = 1;
+            this.fireFoxParrotGroupBox3.Controls.Add(this.firefoxHistoryForeverLabel);
+            this.fireFoxParrotGroupBox3.Controls.Add(this.firefoxCookieForeverLabel);
+            this.fireFoxParrotGroupBox3.Controls.Add(this.firefoxCacheForeverLabel);
+            this.fireFoxParrotGroupBox3.Controls.Add(this.thunderLabel14);
+            this.fireFoxParrotGroupBox3.Controls.Add(this.firefoxHistoryHopeSwitch);
+            this.fireFoxParrotGroupBox3.Controls.Add(this.thunderLabel16);
+            this.fireFoxParrotGroupBox3.Controls.Add(this.firefoxCookieHopeSwitch);
+            this.fireFoxParrotGroupBox3.Controls.Add(this.thunderLabel18);
+            this.fireFoxParrotGroupBox3.Controls.Add(this.firefoxCacheHopeSwitch);
+            this.fireFoxParrotGroupBox3.Location = new System.Drawing.Point(19, 341);
+            this.fireFoxParrotGroupBox3.Name = "fireFoxParrotGroupBox3";
+            this.fireFoxParrotGroupBox3.ShowText = true;
+            this.fireFoxParrotGroupBox3.Size = new System.Drawing.Size(254, 98);
+            this.fireFoxParrotGroupBox3.TabIndex = 58;
+            this.fireFoxParrotGroupBox3.TabStop = false;
+            this.fireFoxParrotGroupBox3.Text = "FireFox";
+            this.fireFoxParrotGroupBox3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            // 
+            // firefoxHistoryForeverLabel
+            // 
+            this.firefoxHistoryForeverLabel.AutoSize = true;
+            this.firefoxHistoryForeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.firefoxHistoryForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.firefoxHistoryForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.firefoxHistoryForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.firefoxHistoryForeverLabel.Location = new System.Drawing.Point(154, 69);
+            this.firefoxHistoryForeverLabel.Name = "firefoxHistoryForeverLabel";
+            this.firefoxHistoryForeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.firefoxHistoryForeverLabel.TabIndex = 87;
+            // 
+            // firefoxCookieForeverLabel
+            // 
+            this.firefoxCookieForeverLabel.AutoSize = true;
+            this.firefoxCookieForeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.firefoxCookieForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.firefoxCookieForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.firefoxCookieForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.firefoxCookieForeverLabel.Location = new System.Drawing.Point(154, 45);
+            this.firefoxCookieForeverLabel.Name = "firefoxCookieForeverLabel";
+            this.firefoxCookieForeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.firefoxCookieForeverLabel.TabIndex = 86;
+            // 
+            // firefoxCacheForeverLabel
+            // 
+            this.firefoxCacheForeverLabel.AutoSize = true;
+            this.firefoxCacheForeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.firefoxCacheForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.firefoxCacheForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.firefoxCacheForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.firefoxCacheForeverLabel.Location = new System.Drawing.Point(154, 23);
+            this.firefoxCacheForeverLabel.Name = "firefoxCacheForeverLabel";
+            this.firefoxCacheForeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.firefoxCacheForeverLabel.TabIndex = 85;
+            // 
+            // thunderLabel14
+            // 
+            this.thunderLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.thunderLabel14.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.thunderLabel14.Location = new System.Drawing.Point(6, 68);
+            this.thunderLabel14.Name = "thunderLabel14";
+            this.thunderLabel14.Size = new System.Drawing.Size(96, 16);
+            this.thunderLabel14.TabIndex = 84;
+            this.thunderLabel14.Text = "历史记录";
+            // 
+            // firefoxHistoryHopeSwitch
+            // 
+            this.firefoxHistoryHopeSwitch.AutoSize = true;
+            this.firefoxHistoryHopeSwitch.BaseColor = System.Drawing.Color.White;
+            this.firefoxHistoryHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.firefoxHistoryHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
+            this.firefoxHistoryHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.firefoxHistoryHopeSwitch.Location = new System.Drawing.Point(108, 64);
+            this.firefoxHistoryHopeSwitch.Name = "firefoxHistoryHopeSwitch";
+            this.firefoxHistoryHopeSwitch.Size = new System.Drawing.Size(40, 20);
+            this.firefoxHistoryHopeSwitch.TabIndex = 83;
+            this.firefoxHistoryHopeSwitch.Text = "hopeSwitch6";
+            this.firefoxHistoryHopeSwitch.UseVisualStyleBackColor = true;
+            // 
+            // thunderLabel16
+            // 
+            this.thunderLabel16.BackColor = System.Drawing.Color.Transparent;
+            this.thunderLabel16.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.thunderLabel16.Location = new System.Drawing.Point(6, 46);
+            this.thunderLabel16.Name = "thunderLabel16";
+            this.thunderLabel16.Size = new System.Drawing.Size(96, 16);
+            this.thunderLabel16.TabIndex = 82;
+            this.thunderLabel16.Text = "Cookie";
+            // 
+            // firefoxCookieHopeSwitch
+            // 
+            this.firefoxCookieHopeSwitch.AutoSize = true;
+            this.firefoxCookieHopeSwitch.BaseColor = System.Drawing.Color.White;
+            this.firefoxCookieHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.firefoxCookieHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
+            this.firefoxCookieHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.firefoxCookieHopeSwitch.Location = new System.Drawing.Point(108, 42);
+            this.firefoxCookieHopeSwitch.Name = "firefoxCookieHopeSwitch";
+            this.firefoxCookieHopeSwitch.Size = new System.Drawing.Size(40, 20);
+            this.firefoxCookieHopeSwitch.TabIndex = 81;
+            this.firefoxCookieHopeSwitch.Text = "hopeSwitch7";
+            this.firefoxCookieHopeSwitch.UseVisualStyleBackColor = true;
+            // 
+            // thunderLabel18
+            // 
+            this.thunderLabel18.BackColor = System.Drawing.Color.Transparent;
+            this.thunderLabel18.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.thunderLabel18.Location = new System.Drawing.Point(6, 24);
+            this.thunderLabel18.Name = "thunderLabel18";
+            this.thunderLabel18.Size = new System.Drawing.Size(96, 16);
+            this.thunderLabel18.TabIndex = 80;
+            this.thunderLabel18.Text = "缓存";
+            // 
+            // firefoxCacheHopeSwitch
+            // 
+            this.firefoxCacheHopeSwitch.AutoSize = true;
+            this.firefoxCacheHopeSwitch.BaseColor = System.Drawing.Color.White;
+            this.firefoxCacheHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.firefoxCacheHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
+            this.firefoxCacheHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.firefoxCacheHopeSwitch.Location = new System.Drawing.Point(108, 20);
+            this.firefoxCacheHopeSwitch.Name = "firefoxCacheHopeSwitch";
+            this.firefoxCacheHopeSwitch.Size = new System.Drawing.Size(40, 20);
+            this.firefoxCacheHopeSwitch.TabIndex = 79;
+            this.firefoxCacheHopeSwitch.Text = "hopeSwitch8";
+            this.firefoxCacheHopeSwitch.UseVisualStyleBackColor = true;
+            // 
             // edgeParrotGroupBox2
             // 
             this.edgeParrotGroupBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
@@ -269,6 +399,186 @@
             this.edgeParrotGroupBox2.Text = "Edge";
             this.edgeParrotGroupBox2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             // 
+            // edgeUpdateCacheForeverLabel
+            // 
+            this.edgeUpdateCacheForeverLabel.AutoSize = true;
+            this.edgeUpdateCacheForeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.edgeUpdateCacheForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.edgeUpdateCacheForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.edgeUpdateCacheForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.edgeUpdateCacheForeverLabel.Location = new System.Drawing.Point(154, 116);
+            this.edgeUpdateCacheForeverLabel.Name = "edgeUpdateCacheForeverLabel";
+            this.edgeUpdateCacheForeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.edgeUpdateCacheForeverLabel.TabIndex = 78;
+            // 
+            // edgeCookieForeverLabel
+            // 
+            this.edgeCookieForeverLabel.AutoSize = true;
+            this.edgeCookieForeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.edgeCookieForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.edgeCookieForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.edgeCookieForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.edgeCookieForeverLabel.Location = new System.Drawing.Point(154, 92);
+            this.edgeCookieForeverLabel.Name = "edgeCookieForeverLabel";
+            this.edgeCookieForeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.edgeCookieForeverLabel.TabIndex = 77;
+            // 
+            // edgePasswordForeverLabel
+            // 
+            this.edgePasswordForeverLabel.AutoSize = true;
+            this.edgePasswordForeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.edgePasswordForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.edgePasswordForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.edgePasswordForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.edgePasswordForeverLabel.Location = new System.Drawing.Point(154, 70);
+            this.edgePasswordForeverLabel.Name = "edgePasswordForeverLabel";
+            this.edgePasswordForeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.edgePasswordForeverLabel.TabIndex = 76;
+            // 
+            // edgeHistoryforeverLabel
+            // 
+            this.edgeHistoryforeverLabel.AutoSize = true;
+            this.edgeHistoryforeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.edgeHistoryforeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.edgeHistoryforeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.edgeHistoryforeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.edgeHistoryforeverLabel.Location = new System.Drawing.Point(154, 49);
+            this.edgeHistoryforeverLabel.Name = "edgeHistoryforeverLabel";
+            this.edgeHistoryforeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.edgeHistoryforeverLabel.TabIndex = 75;
+            // 
+            // edgeCacheForeverLabel
+            // 
+            this.edgeCacheForeverLabel.AutoSize = true;
+            this.edgeCacheForeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.edgeCacheForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.edgeCacheForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.edgeCacheForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.edgeCacheForeverLabel.Location = new System.Drawing.Point(154, 27);
+            this.edgeCacheForeverLabel.Name = "edgeCacheForeverLabel";
+            this.edgeCacheForeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.edgeCacheForeverLabel.TabIndex = 74;
+            // 
+            // thunderLabel2
+            // 
+            this.thunderLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.thunderLabel2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.thunderLabel2.Location = new System.Drawing.Point(6, 115);
+            this.thunderLabel2.Name = "thunderLabel2";
+            this.thunderLabel2.Size = new System.Drawing.Size(96, 16);
+            this.thunderLabel2.TabIndex = 73;
+            this.thunderLabel2.Text = "更新缓存";
+            // 
+            // edgeUpdateCacheHopeSwitch
+            // 
+            this.edgeUpdateCacheHopeSwitch.AutoSize = true;
+            this.edgeUpdateCacheHopeSwitch.BaseColor = System.Drawing.Color.White;
+            this.edgeUpdateCacheHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.edgeUpdateCacheHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
+            this.edgeUpdateCacheHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.edgeUpdateCacheHopeSwitch.Location = new System.Drawing.Point(108, 111);
+            this.edgeUpdateCacheHopeSwitch.Name = "edgeUpdateCacheHopeSwitch";
+            this.edgeUpdateCacheHopeSwitch.Size = new System.Drawing.Size(40, 20);
+            this.edgeUpdateCacheHopeSwitch.TabIndex = 72;
+            this.edgeUpdateCacheHopeSwitch.Text = "hopeSwitch1";
+            this.edgeUpdateCacheHopeSwitch.UseVisualStyleBackColor = true;
+            // 
+            // thunderLabel6
+            // 
+            this.thunderLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.thunderLabel6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.thunderLabel6.Location = new System.Drawing.Point(6, 93);
+            this.thunderLabel6.Name = "thunderLabel6";
+            this.thunderLabel6.Size = new System.Drawing.Size(96, 16);
+            this.thunderLabel6.TabIndex = 71;
+            this.thunderLabel6.Text = "Cookie";
+            // 
+            // edgeCookieHopeSwitch
+            // 
+            this.edgeCookieHopeSwitch.AutoSize = true;
+            this.edgeCookieHopeSwitch.BaseColor = System.Drawing.Color.White;
+            this.edgeCookieHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.edgeCookieHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
+            this.edgeCookieHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.edgeCookieHopeSwitch.Location = new System.Drawing.Point(108, 89);
+            this.edgeCookieHopeSwitch.Name = "edgeCookieHopeSwitch";
+            this.edgeCookieHopeSwitch.Size = new System.Drawing.Size(40, 20);
+            this.edgeCookieHopeSwitch.TabIndex = 70;
+            this.edgeCookieHopeSwitch.Text = "hopeSwitch2";
+            this.edgeCookieHopeSwitch.UseVisualStyleBackColor = true;
+            // 
+            // thunderLabel8
+            // 
+            this.thunderLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.thunderLabel8.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.thunderLabel8.Location = new System.Drawing.Point(6, 71);
+            this.thunderLabel8.Name = "thunderLabel8";
+            this.thunderLabel8.Size = new System.Drawing.Size(96, 16);
+            this.thunderLabel8.TabIndex = 69;
+            this.thunderLabel8.Text = "密码";
+            // 
+            // edgePasswordHopeSwitch
+            // 
+            this.edgePasswordHopeSwitch.AutoSize = true;
+            this.edgePasswordHopeSwitch.BaseColor = System.Drawing.Color.White;
+            this.edgePasswordHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.edgePasswordHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
+            this.edgePasswordHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.edgePasswordHopeSwitch.Location = new System.Drawing.Point(108, 67);
+            this.edgePasswordHopeSwitch.Name = "edgePasswordHopeSwitch";
+            this.edgePasswordHopeSwitch.Size = new System.Drawing.Size(40, 20);
+            this.edgePasswordHopeSwitch.TabIndex = 68;
+            this.edgePasswordHopeSwitch.Text = "hopeSwitch3";
+            this.edgePasswordHopeSwitch.UseVisualStyleBackColor = true;
+            // 
+            // edgeCacheHopeSwitch
+            // 
+            this.edgeCacheHopeSwitch.AutoSize = true;
+            this.edgeCacheHopeSwitch.BaseColor = System.Drawing.Color.White;
+            this.edgeCacheHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.edgeCacheHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
+            this.edgeCacheHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.edgeCacheHopeSwitch.Location = new System.Drawing.Point(108, 23);
+            this.edgeCacheHopeSwitch.Name = "edgeCacheHopeSwitch";
+            this.edgeCacheHopeSwitch.Size = new System.Drawing.Size(40, 20);
+            this.edgeCacheHopeSwitch.TabIndex = 64;
+            this.edgeCacheHopeSwitch.Text = "hopeSwitch4";
+            this.edgeCacheHopeSwitch.UseVisualStyleBackColor = true;
+            // 
+            // thunderLabel10
+            // 
+            this.thunderLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.thunderLabel10.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.thunderLabel10.Location = new System.Drawing.Point(6, 27);
+            this.thunderLabel10.Name = "thunderLabel10";
+            this.thunderLabel10.Size = new System.Drawing.Size(96, 16);
+            this.thunderLabel10.TabIndex = 65;
+            this.thunderLabel10.Text = "缓存";
+            // 
+            // thunderLabel12
+            // 
+            this.thunderLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.thunderLabel12.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.thunderLabel12.Location = new System.Drawing.Point(5, 49);
+            this.thunderLabel12.Name = "thunderLabel12";
+            this.thunderLabel12.Size = new System.Drawing.Size(96, 16);
+            this.thunderLabel12.TabIndex = 67;
+            this.thunderLabel12.Text = "历史记录";
+            // 
+            // edgeHistoryHopeSwitch
+            // 
+            this.edgeHistoryHopeSwitch.AutoSize = true;
+            this.edgeHistoryHopeSwitch.BaseColor = System.Drawing.Color.White;
+            this.edgeHistoryHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.edgeHistoryHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
+            this.edgeHistoryHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.edgeHistoryHopeSwitch.Location = new System.Drawing.Point(107, 45);
+            this.edgeHistoryHopeSwitch.Name = "edgeHistoryHopeSwitch";
+            this.edgeHistoryHopeSwitch.Size = new System.Drawing.Size(40, 20);
+            this.edgeHistoryHopeSwitch.TabIndex = 66;
+            this.edgeHistoryHopeSwitch.Text = "edgeHopeSwitch5";
+            this.edgeHistoryHopeSwitch.UseVisualStyleBackColor = true;
+            // 
             // chromeParrotGroupBox1
             // 
             this.chromeParrotGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
@@ -296,6 +606,66 @@
             this.chromeParrotGroupBox1.TabStop = false;
             this.chromeParrotGroupBox1.Text = "Chrome";
             this.chromeParrotGroupBox1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            // 
+            // chromeUpdateCacheForeverLabel
+            // 
+            this.chromeUpdateCacheForeverLabel.AutoSize = true;
+            this.chromeUpdateCacheForeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.chromeUpdateCacheForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.chromeUpdateCacheForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.chromeUpdateCacheForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.chromeUpdateCacheForeverLabel.Location = new System.Drawing.Point(154, 113);
+            this.chromeUpdateCacheForeverLabel.Name = "chromeUpdateCacheForeverLabel";
+            this.chromeUpdateCacheForeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.chromeUpdateCacheForeverLabel.TabIndex = 63;
+            // 
+            // chromeCookieForeverLabel
+            // 
+            this.chromeCookieForeverLabel.AutoSize = true;
+            this.chromeCookieForeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.chromeCookieForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.chromeCookieForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.chromeCookieForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.chromeCookieForeverLabel.Location = new System.Drawing.Point(154, 89);
+            this.chromeCookieForeverLabel.Name = "chromeCookieForeverLabel";
+            this.chromeCookieForeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.chromeCookieForeverLabel.TabIndex = 62;
+            // 
+            // chromePasswordForeverLabel
+            // 
+            this.chromePasswordForeverLabel.AutoSize = true;
+            this.chromePasswordForeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.chromePasswordForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.chromePasswordForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.chromePasswordForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.chromePasswordForeverLabel.Location = new System.Drawing.Point(154, 67);
+            this.chromePasswordForeverLabel.Name = "chromePasswordForeverLabel";
+            this.chromePasswordForeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.chromePasswordForeverLabel.TabIndex = 61;
+            // 
+            // chromeHilstoryForeverLabel
+            // 
+            this.chromeHilstoryForeverLabel.AutoSize = true;
+            this.chromeHilstoryForeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.chromeHilstoryForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.chromeHilstoryForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.chromeHilstoryForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.chromeHilstoryForeverLabel.Location = new System.Drawing.Point(154, 46);
+            this.chromeHilstoryForeverLabel.Name = "chromeHilstoryForeverLabel";
+            this.chromeHilstoryForeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.chromeHilstoryForeverLabel.TabIndex = 60;
+            // 
+            // chromeCacheForeverLabel
+            // 
+            this.chromeCacheForeverLabel.AutoSize = true;
+            this.chromeCacheForeverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.chromeCacheForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.chromeCacheForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.chromeCacheForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.chromeCacheForeverLabel.Location = new System.Drawing.Point(154, 24);
+            this.chromeCacheForeverLabel.Name = "chromeCacheForeverLabel";
+            this.chromeCacheForeverLabel.Size = new System.Drawing.Size(2, 15);
+            this.chromeCacheForeverLabel.TabIndex = 59;
             // 
             // thunderLabel23
             // 
@@ -516,7 +886,7 @@
             this.systemForeverGroupBox.Controls.Add(this.recentFileHopeSwitch);
             this.systemForeverGroupBox.Controls.Add(this.thunderLabel3);
             this.systemForeverGroupBox.Controls.Add(this.thunderLabel19);
-            this.systemForeverGroupBox.Controls.Add(this.hopeSwitch10);
+            this.systemForeverGroupBox.Controls.Add(this.registryHopeSwitch);
             this.systemForeverGroupBox.Controls.Add(this.thumbCacheHopeSwitch);
             this.systemForeverGroupBox.Controls.Add(this.thunderLabel4);
             this.systemForeverGroupBox.Controls.Add(this.thunderLabel17);
@@ -764,19 +1134,19 @@
             this.thunderLabel19.TabIndex = 41;
             this.thunderLabel19.Text = "注册表";
             // 
-            // hopeSwitch10
+            // registryHopeSwitch
             // 
-            this.hopeSwitch10.AutoSize = true;
-            this.hopeSwitch10.BaseColor = System.Drawing.Color.White;
-            this.hopeSwitch10.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.hopeSwitch10.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
-            this.hopeSwitch10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hopeSwitch10.Location = new System.Drawing.Point(120, 259);
-            this.hopeSwitch10.Name = "hopeSwitch10";
-            this.hopeSwitch10.Size = new System.Drawing.Size(40, 20);
-            this.hopeSwitch10.TabIndex = 40;
-            this.hopeSwitch10.Text = "hopeSwitch10";
-            this.hopeSwitch10.UseVisualStyleBackColor = true;
+            this.registryHopeSwitch.AutoSize = true;
+            this.registryHopeSwitch.BaseColor = System.Drawing.Color.White;
+            this.registryHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
+            this.registryHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
+            this.registryHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registryHopeSwitch.Location = new System.Drawing.Point(120, 259);
+            this.registryHopeSwitch.Name = "registryHopeSwitch";
+            this.registryHopeSwitch.Size = new System.Drawing.Size(40, 20);
+            this.registryHopeSwitch.TabIndex = 40;
+            this.registryHopeSwitch.Text = "hopeSwitch10";
+            this.registryHopeSwitch.UseVisualStyleBackColor = true;
             // 
             // thumbCacheHopeSwitch
             // 
@@ -1020,376 +1390,6 @@
             this.SystemControlTab.TabIndex = 1;
             this.SystemControlTab.Text = "系统优化";
             // 
-            // fireFoxParrotGroupBox3
-            // 
-            this.fireFoxParrotGroupBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            this.fireFoxParrotGroupBox3.BorderWidth = 1;
-            this.fireFoxParrotGroupBox3.Controls.Add(this.firefoxHistoryForeverLabel);
-            this.fireFoxParrotGroupBox3.Controls.Add(this.firefoxCookieForeverLabel);
-            this.fireFoxParrotGroupBox3.Controls.Add(this.firefoxCacheForeverLabel);
-            this.fireFoxParrotGroupBox3.Controls.Add(this.thunderLabel14);
-            this.fireFoxParrotGroupBox3.Controls.Add(this.firefoxHistoryHopeSwitch);
-            this.fireFoxParrotGroupBox3.Controls.Add(this.thunderLabel16);
-            this.fireFoxParrotGroupBox3.Controls.Add(this.firefoxCookieHopeSwitch);
-            this.fireFoxParrotGroupBox3.Controls.Add(this.thunderLabel18);
-            this.fireFoxParrotGroupBox3.Controls.Add(this.firefoxCacheHopeSwitch);
-            this.fireFoxParrotGroupBox3.Location = new System.Drawing.Point(19, 341);
-            this.fireFoxParrotGroupBox3.Name = "fireFoxParrotGroupBox3";
-            this.fireFoxParrotGroupBox3.ShowText = true;
-            this.fireFoxParrotGroupBox3.Size = new System.Drawing.Size(254, 98);
-            this.fireFoxParrotGroupBox3.TabIndex = 58;
-            this.fireFoxParrotGroupBox3.TabStop = false;
-            this.fireFoxParrotGroupBox3.Text = "FireFox";
-            this.fireFoxParrotGroupBox3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
-            // 
-            // chromeCacheForeverLabel
-            // 
-            this.chromeCacheForeverLabel.AutoSize = true;
-            this.chromeCacheForeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.chromeCacheForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.chromeCacheForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.chromeCacheForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.chromeCacheForeverLabel.Location = new System.Drawing.Point(154, 24);
-            this.chromeCacheForeverLabel.Name = "chromeCacheForeverLabel";
-            this.chromeCacheForeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.chromeCacheForeverLabel.TabIndex = 59;
-            // 
-            // chromeHilstoryForeverLabel
-            // 
-            this.chromeHilstoryForeverLabel.AutoSize = true;
-            this.chromeHilstoryForeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.chromeHilstoryForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.chromeHilstoryForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.chromeHilstoryForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.chromeHilstoryForeverLabel.Location = new System.Drawing.Point(154, 46);
-            this.chromeHilstoryForeverLabel.Name = "chromeHilstoryForeverLabel";
-            this.chromeHilstoryForeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.chromeHilstoryForeverLabel.TabIndex = 60;
-            // 
-            // chromePasswordForeverLabel
-            // 
-            this.chromePasswordForeverLabel.AutoSize = true;
-            this.chromePasswordForeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.chromePasswordForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.chromePasswordForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.chromePasswordForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.chromePasswordForeverLabel.Location = new System.Drawing.Point(154, 67);
-            this.chromePasswordForeverLabel.Name = "chromePasswordForeverLabel";
-            this.chromePasswordForeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.chromePasswordForeverLabel.TabIndex = 61;
-            // 
-            // chromeCookieForeverLabel
-            // 
-            this.chromeCookieForeverLabel.AutoSize = true;
-            this.chromeCookieForeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.chromeCookieForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.chromeCookieForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.chromeCookieForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.chromeCookieForeverLabel.Location = new System.Drawing.Point(154, 89);
-            this.chromeCookieForeverLabel.Name = "chromeCookieForeverLabel";
-            this.chromeCookieForeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.chromeCookieForeverLabel.TabIndex = 62;
-            // 
-            // chromeUpdateCacheForeverLabel
-            // 
-            this.chromeUpdateCacheForeverLabel.AutoSize = true;
-            this.chromeUpdateCacheForeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.chromeUpdateCacheForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.chromeUpdateCacheForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.chromeUpdateCacheForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.chromeUpdateCacheForeverLabel.Location = new System.Drawing.Point(154, 113);
-            this.chromeUpdateCacheForeverLabel.Name = "chromeUpdateCacheForeverLabel";
-            this.chromeUpdateCacheForeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.chromeUpdateCacheForeverLabel.TabIndex = 63;
-            // 
-            // edgeUpdateCacheForeverLabel
-            // 
-            this.edgeUpdateCacheForeverLabel.AutoSize = true;
-            this.edgeUpdateCacheForeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.edgeUpdateCacheForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.edgeUpdateCacheForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.edgeUpdateCacheForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.edgeUpdateCacheForeverLabel.Location = new System.Drawing.Point(154, 116);
-            this.edgeUpdateCacheForeverLabel.Name = "edgeUpdateCacheForeverLabel";
-            this.edgeUpdateCacheForeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.edgeUpdateCacheForeverLabel.TabIndex = 78;
-            // 
-            // edgeCookieForeverLabel
-            // 
-            this.edgeCookieForeverLabel.AutoSize = true;
-            this.edgeCookieForeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.edgeCookieForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.edgeCookieForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.edgeCookieForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.edgeCookieForeverLabel.Location = new System.Drawing.Point(154, 92);
-            this.edgeCookieForeverLabel.Name = "edgeCookieForeverLabel";
-            this.edgeCookieForeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.edgeCookieForeverLabel.TabIndex = 77;
-            // 
-            // edgePasswordForeverLabel
-            // 
-            this.edgePasswordForeverLabel.AutoSize = true;
-            this.edgePasswordForeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.edgePasswordForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.edgePasswordForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.edgePasswordForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.edgePasswordForeverLabel.Location = new System.Drawing.Point(154, 70);
-            this.edgePasswordForeverLabel.Name = "edgePasswordForeverLabel";
-            this.edgePasswordForeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.edgePasswordForeverLabel.TabIndex = 76;
-            // 
-            // edgeHistoryforeverLabel
-            // 
-            this.edgeHistoryforeverLabel.AutoSize = true;
-            this.edgeHistoryforeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.edgeHistoryforeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.edgeHistoryforeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.edgeHistoryforeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.edgeHistoryforeverLabel.Location = new System.Drawing.Point(154, 49);
-            this.edgeHistoryforeverLabel.Name = "edgeHistoryforeverLabel";
-            this.edgeHistoryforeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.edgeHistoryforeverLabel.TabIndex = 75;
-            // 
-            // edgeCacheForeverLabel
-            // 
-            this.edgeCacheForeverLabel.AutoSize = true;
-            this.edgeCacheForeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.edgeCacheForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.edgeCacheForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.edgeCacheForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.edgeCacheForeverLabel.Location = new System.Drawing.Point(154, 27);
-            this.edgeCacheForeverLabel.Name = "edgeCacheForeverLabel";
-            this.edgeCacheForeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.edgeCacheForeverLabel.TabIndex = 74;
-            // 
-            // thunderLabel2
-            // 
-            this.thunderLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel2.Location = new System.Drawing.Point(6, 115);
-            this.thunderLabel2.Name = "thunderLabel2";
-            this.thunderLabel2.Size = new System.Drawing.Size(96, 16);
-            this.thunderLabel2.TabIndex = 73;
-            this.thunderLabel2.Text = "更新缓存";
-            // 
-            // edgeUpdateCacheHopeSwitch
-            // 
-            this.edgeUpdateCacheHopeSwitch.AutoSize = true;
-            this.edgeUpdateCacheHopeSwitch.BaseColor = System.Drawing.Color.White;
-            this.edgeUpdateCacheHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.edgeUpdateCacheHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
-            this.edgeUpdateCacheHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.edgeUpdateCacheHopeSwitch.Location = new System.Drawing.Point(108, 111);
-            this.edgeUpdateCacheHopeSwitch.Name = "edgeUpdateCacheHopeSwitch";
-            this.edgeUpdateCacheHopeSwitch.Size = new System.Drawing.Size(40, 20);
-            this.edgeUpdateCacheHopeSwitch.TabIndex = 72;
-            this.edgeUpdateCacheHopeSwitch.Text = "hopeSwitch1";
-            this.edgeUpdateCacheHopeSwitch.UseVisualStyleBackColor = true;
-            // 
-            // thunderLabel6
-            // 
-            this.thunderLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel6.Location = new System.Drawing.Point(6, 93);
-            this.thunderLabel6.Name = "thunderLabel6";
-            this.thunderLabel6.Size = new System.Drawing.Size(96, 16);
-            this.thunderLabel6.TabIndex = 71;
-            this.thunderLabel6.Text = "Cookie";
-            // 
-            // edgeCookieHopeSwitch
-            // 
-            this.edgeCookieHopeSwitch.AutoSize = true;
-            this.edgeCookieHopeSwitch.BaseColor = System.Drawing.Color.White;
-            this.edgeCookieHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.edgeCookieHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
-            this.edgeCookieHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.edgeCookieHopeSwitch.Location = new System.Drawing.Point(108, 89);
-            this.edgeCookieHopeSwitch.Name = "edgeCookieHopeSwitch";
-            this.edgeCookieHopeSwitch.Size = new System.Drawing.Size(40, 20);
-            this.edgeCookieHopeSwitch.TabIndex = 70;
-            this.edgeCookieHopeSwitch.Text = "hopeSwitch2";
-            this.edgeCookieHopeSwitch.UseVisualStyleBackColor = true;
-            // 
-            // thunderLabel8
-            // 
-            this.thunderLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel8.Location = new System.Drawing.Point(6, 71);
-            this.thunderLabel8.Name = "thunderLabel8";
-            this.thunderLabel8.Size = new System.Drawing.Size(96, 16);
-            this.thunderLabel8.TabIndex = 69;
-            this.thunderLabel8.Text = "密码";
-            // 
-            // edgePasswordHopeSwitch
-            // 
-            this.edgePasswordHopeSwitch.AutoSize = true;
-            this.edgePasswordHopeSwitch.BaseColor = System.Drawing.Color.White;
-            this.edgePasswordHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.edgePasswordHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
-            this.edgePasswordHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.edgePasswordHopeSwitch.Location = new System.Drawing.Point(108, 67);
-            this.edgePasswordHopeSwitch.Name = "edgePasswordHopeSwitch";
-            this.edgePasswordHopeSwitch.Size = new System.Drawing.Size(40, 20);
-            this.edgePasswordHopeSwitch.TabIndex = 68;
-            this.edgePasswordHopeSwitch.Text = "hopeSwitch3";
-            this.edgePasswordHopeSwitch.UseVisualStyleBackColor = true;
-            // 
-            // edgeCacheHopeSwitch
-            // 
-            this.edgeCacheHopeSwitch.AutoSize = true;
-            this.edgeCacheHopeSwitch.BaseColor = System.Drawing.Color.White;
-            this.edgeCacheHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.edgeCacheHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
-            this.edgeCacheHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.edgeCacheHopeSwitch.Location = new System.Drawing.Point(108, 23);
-            this.edgeCacheHopeSwitch.Name = "edgeCacheHopeSwitch";
-            this.edgeCacheHopeSwitch.Size = new System.Drawing.Size(40, 20);
-            this.edgeCacheHopeSwitch.TabIndex = 64;
-            this.edgeCacheHopeSwitch.Text = "hopeSwitch4";
-            this.edgeCacheHopeSwitch.UseVisualStyleBackColor = true;
-            // 
-            // thunderLabel10
-            // 
-            this.thunderLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel10.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel10.Location = new System.Drawing.Point(6, 27);
-            this.thunderLabel10.Name = "thunderLabel10";
-            this.thunderLabel10.Size = new System.Drawing.Size(96, 16);
-            this.thunderLabel10.TabIndex = 65;
-            this.thunderLabel10.Text = "缓存";
-            // 
-            // thunderLabel12
-            // 
-            this.thunderLabel12.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel12.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel12.Location = new System.Drawing.Point(5, 49);
-            this.thunderLabel12.Name = "thunderLabel12";
-            this.thunderLabel12.Size = new System.Drawing.Size(96, 16);
-            this.thunderLabel12.TabIndex = 67;
-            this.thunderLabel12.Text = "历史记录";
-            // 
-            // edgeHistoryHopeSwitch
-            // 
-            this.edgeHistoryHopeSwitch.AutoSize = true;
-            this.edgeHistoryHopeSwitch.BaseColor = System.Drawing.Color.White;
-            this.edgeHistoryHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.edgeHistoryHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
-            this.edgeHistoryHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.edgeHistoryHopeSwitch.Location = new System.Drawing.Point(107, 45);
-            this.edgeHistoryHopeSwitch.Name = "edgeHistoryHopeSwitch";
-            this.edgeHistoryHopeSwitch.Size = new System.Drawing.Size(40, 20);
-            this.edgeHistoryHopeSwitch.TabIndex = 66;
-            this.edgeHistoryHopeSwitch.Text = "edgeHopeSwitch5";
-            this.edgeHistoryHopeSwitch.UseVisualStyleBackColor = true;
-            // 
-            // firefoxHistoryForeverLabel
-            // 
-            this.firefoxHistoryForeverLabel.AutoSize = true;
-            this.firefoxHistoryForeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.firefoxHistoryForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.firefoxHistoryForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.firefoxHistoryForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.firefoxHistoryForeverLabel.Location = new System.Drawing.Point(154, 69);
-            this.firefoxHistoryForeverLabel.Name = "firefoxHistoryForeverLabel";
-            this.firefoxHistoryForeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.firefoxHistoryForeverLabel.TabIndex = 87;
-            // 
-            // firefoxCookieForeverLabel
-            // 
-            this.firefoxCookieForeverLabel.AutoSize = true;
-            this.firefoxCookieForeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.firefoxCookieForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.firefoxCookieForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.firefoxCookieForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.firefoxCookieForeverLabel.Location = new System.Drawing.Point(154, 45);
-            this.firefoxCookieForeverLabel.Name = "firefoxCookieForeverLabel";
-            this.firefoxCookieForeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.firefoxCookieForeverLabel.TabIndex = 86;
-            // 
-            // firefoxCacheForeverLabel
-            // 
-            this.firefoxCacheForeverLabel.AutoSize = true;
-            this.firefoxCacheForeverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.firefoxCacheForeverLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.firefoxCacheForeverLabel.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.firefoxCacheForeverLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.firefoxCacheForeverLabel.Location = new System.Drawing.Point(154, 23);
-            this.firefoxCacheForeverLabel.Name = "firefoxCacheForeverLabel";
-            this.firefoxCacheForeverLabel.Size = new System.Drawing.Size(2, 15);
-            this.firefoxCacheForeverLabel.TabIndex = 85;
-            // 
-            // thunderLabel14
-            // 
-            this.thunderLabel14.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel14.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel14.Location = new System.Drawing.Point(6, 68);
-            this.thunderLabel14.Name = "thunderLabel14";
-            this.thunderLabel14.Size = new System.Drawing.Size(96, 16);
-            this.thunderLabel14.TabIndex = 84;
-            this.thunderLabel14.Text = "历史记录";
-            // 
-            // firefoxHistoryHopeSwitch
-            // 
-            this.firefoxHistoryHopeSwitch.AutoSize = true;
-            this.firefoxHistoryHopeSwitch.BaseColor = System.Drawing.Color.White;
-            this.firefoxHistoryHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.firefoxHistoryHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
-            this.firefoxHistoryHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.firefoxHistoryHopeSwitch.Location = new System.Drawing.Point(108, 64);
-            this.firefoxHistoryHopeSwitch.Name = "firefoxHistoryHopeSwitch";
-            this.firefoxHistoryHopeSwitch.Size = new System.Drawing.Size(40, 20);
-            this.firefoxHistoryHopeSwitch.TabIndex = 83;
-            this.firefoxHistoryHopeSwitch.Text = "hopeSwitch6";
-            this.firefoxHistoryHopeSwitch.UseVisualStyleBackColor = true;
-            // 
-            // thunderLabel16
-            // 
-            this.thunderLabel16.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel16.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel16.Location = new System.Drawing.Point(6, 46);
-            this.thunderLabel16.Name = "thunderLabel16";
-            this.thunderLabel16.Size = new System.Drawing.Size(96, 16);
-            this.thunderLabel16.TabIndex = 82;
-            this.thunderLabel16.Text = "Cookie";
-            // 
-            // firefoxCookieHopeSwitch
-            // 
-            this.firefoxCookieHopeSwitch.AutoSize = true;
-            this.firefoxCookieHopeSwitch.BaseColor = System.Drawing.Color.White;
-            this.firefoxCookieHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.firefoxCookieHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
-            this.firefoxCookieHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.firefoxCookieHopeSwitch.Location = new System.Drawing.Point(108, 42);
-            this.firefoxCookieHopeSwitch.Name = "firefoxCookieHopeSwitch";
-            this.firefoxCookieHopeSwitch.Size = new System.Drawing.Size(40, 20);
-            this.firefoxCookieHopeSwitch.TabIndex = 81;
-            this.firefoxCookieHopeSwitch.Text = "hopeSwitch7";
-            this.firefoxCookieHopeSwitch.UseVisualStyleBackColor = true;
-            // 
-            // thunderLabel18
-            // 
-            this.thunderLabel18.BackColor = System.Drawing.Color.Transparent;
-            this.thunderLabel18.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.thunderLabel18.Location = new System.Drawing.Point(6, 24);
-            this.thunderLabel18.Name = "thunderLabel18";
-            this.thunderLabel18.Size = new System.Drawing.Size(96, 16);
-            this.thunderLabel18.TabIndex = 80;
-            this.thunderLabel18.Text = "缓存";
-            // 
-            // firefoxCacheHopeSwitch
-            // 
-            this.firefoxCacheHopeSwitch.AutoSize = true;
-            this.firefoxCacheHopeSwitch.BaseColor = System.Drawing.Color.White;
-            this.firefoxCacheHopeSwitch.BaseOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(223)))), ((int)(((byte)(230)))));
-            this.firefoxCacheHopeSwitch.BaseOnColor = System.Drawing.Color.MediumSeaGreen;
-            this.firefoxCacheHopeSwitch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.firefoxCacheHopeSwitch.Location = new System.Drawing.Point(108, 20);
-            this.firefoxCacheHopeSwitch.Name = "firefoxCacheHopeSwitch";
-            this.firefoxCacheHopeSwitch.Size = new System.Drawing.Size(40, 20);
-            this.firefoxCacheHopeSwitch.TabIndex = 79;
-            this.firefoxCacheHopeSwitch.Text = "hopeSwitch8";
-            this.firefoxCacheHopeSwitch.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1404,14 +1404,14 @@
             this.tabPage1.ResumeLayout(false);
             this.CleanTab.ResumeLayout(false);
             this.browserForeverGroupBox2.ResumeLayout(false);
+            this.fireFoxParrotGroupBox3.ResumeLayout(false);
+            this.fireFoxParrotGroupBox3.PerformLayout();
             this.edgeParrotGroupBox2.ResumeLayout(false);
             this.edgeParrotGroupBox2.PerformLayout();
             this.chromeParrotGroupBox1.ResumeLayout(false);
             this.chromeParrotGroupBox1.PerformLayout();
             this.systemForeverGroupBox.ResumeLayout(false);
             this.systemForeverGroupBox.PerformLayout();
-            this.fireFoxParrotGroupBox3.ResumeLayout(false);
-            this.fireFoxParrotGroupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1433,7 +1433,7 @@
         private ReaLTaiizor.Controls.HopeSwitch recentFileHopeSwitch;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel3;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel19;
-        private ReaLTaiizor.Controls.HopeSwitch hopeSwitch10;
+        private ReaLTaiizor.Controls.HopeSwitch registryHopeSwitch;
         private ReaLTaiizor.Controls.HopeSwitch thumbCacheHopeSwitch;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel4;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel17;

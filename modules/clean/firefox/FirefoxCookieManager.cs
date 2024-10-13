@@ -2,78 +2,49 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using WindowsCleanUP.utils;
 
 namespace WindowsCleanUP.modules.clean.firefox
 {
     internal class FirefoxCookieManager
     {
-        // 获取 Firefox Cookie 数据库路径
-        private static string GetFirefoxProfilePath()
-        {
-            // 默认获取第一个用户配置文件
-            string profilesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Mozilla", "Firefox", "Profiles");
-            var directories = Directory.GetDirectories(profilesPath);
-            return directories.Length > 0 ? directories[0] : null; // 返回第一个配置文件路径
-        }
+        private static readonly string FirefoxProfilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Mozilla", "Firefox", "Profiles");
 
-        // 扫描 Firefox Cookies
-        public static (string Summary, List<string> Cookies) ScanFirefoxCookies()
+        // 扫描Firefox的cookie文件
+        public static (string Summary, List<string> CookieFiles) ScanFirefoxCookies()
         {
-            List<string> cookies = new List<string>();
-            int cookieCount = 0;
+            int fileCount = 0;
+            long totalSize = 0;
+            List<string> cookieFiles = new List<string>();
 
-            string profilePath = GetFirefoxProfilePath();
-            if (profilePath != null)
+            // 查找Firefox配置文件夹
+            if (Directory.Exists(FirefoxProfilePath))
             {
-                string cookieDb = Path.Combine(profilePath, "cookies.sqlite");
-                if (File.Exists(cookieDb))
+                var profileDirs = Directory.GetDirectories(FirefoxProfilePath);
+                foreach (var profileDir in profileDirs)
                 {
-                    using (var connection = new SqliteConnection($"Data Source={cookieDb};"))
+                    string cookiesFilePath = Path.Combine(profileDir, "cookies.sqlite");
+                    if (File.Exists(cookiesFilePath))
                     {
-                        connection.Open();
-                        using (var command = new SqliteCommand("SELECT name, value FROM moz_cookies;", connection))
-                        {
-                            using (var reader = command.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    cookies.Add($"{reader.GetString(0)}: {reader.GetString(1)}");
-                                    cookieCount++;
-                                }
-                            }
-                        }
+                        FileInfo fileInfo = new FileInfo(cookiesFilePath);
+                        cookieFiles.Add(cookiesFilePath);
+                        totalSize += fileInfo.Length;
+                        fileCount++;
                     }
                 }
             }
 
-            string summary = $"{cookieCount}项";
-            return (summary, cookies);
+            // 转换为可读大小
+            string strTotalSize = totalSize == 0 ? "0B" : Utils.FormatBytesToHumanReadable(totalSize);
+            string summary = $"{fileCount}项[{strTotalSize}]";
+
+            return (summary, cookieFiles);
         }
 
-        // 清理 Firefox Cookies
-        public static void CleanFirefoxCookies(List<string> files)
+        // 清理Firefox的cookie文件
+        public static void CleanFirefoxCookies(List<string> cookieFiles)
         {
-            string profilePath = GetFirefoxProfilePath();
-            if (profilePath != null)
-            {
-                string cookieDb = Path.Combine(profilePath, "cookies.sqlite");
-                if (File.Exists(cookieDb))
-                {
-                    try
-                    {
-                        File.Delete(cookieDb); // 删除 Cookie 数据库文件
-                        Console.WriteLine("Firefox Cookies 已清理。");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"无法清理 Cookies: {ex.Message}");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("找不到 Cookie 数据库文件。");
-                }
-            }
+            Utils.deleteFileBatch(cookieFiles);
         }
     }
 }

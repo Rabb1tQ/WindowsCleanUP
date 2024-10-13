@@ -67,6 +67,10 @@ namespace WindowsCleanUP
                     systemUpdateHopeSwitch, systemUpdateForeverLabel,
                     () => SystemUpdateCleaner.ScanSystemUpdateFiles(),
                     (files) => SystemUpdateCleaner.CleanSystemUpdateFiles(files)),
+                new CleanupItem(
+                    registryHopeSwitch, registryForeverLabel,
+                    () => RegistryCleaner.ScanInvalidRegistryKeys(),
+                    (files) => RegistryCleaner.CleanInvalidRegistryKeys(files)),
 
                 //Chrome
                 new CleanupItem(

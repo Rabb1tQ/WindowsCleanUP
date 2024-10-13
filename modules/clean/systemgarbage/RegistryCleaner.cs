@@ -26,7 +26,7 @@ namespace WindowsCleanUP.modules.clean.systemgarbage
                             if (subKey != null)
                             {
                                 string displayName = subKey.GetValue("DisplayName") as string;
-                                string installLocation = subKey.GetValue("InstallLocation") as string;
+                                string installLocation = subKey.GetValue("InstallSource") as string;
 
                                 if (string.IsNullOrEmpty(displayName) || !System.IO.Directory.Exists(installLocation))
                                 {
