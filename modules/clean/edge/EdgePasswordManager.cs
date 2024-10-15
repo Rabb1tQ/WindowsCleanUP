@@ -1,9 +1,10 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using Community.CsharpSqlite.SQLiteClient;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using WindowsCleanUP.utils;
 
 namespace WindowsCleanUP.modules.clean.edge
 {
@@ -35,13 +36,13 @@ namespace WindowsCleanUP.modules.clean.edge
         {
             int entryCount = 0;
             List<string> passwordEntries = new List<string>();
-            string passwordPath = GetEdgePasswordPath();
+            string passwordPath = Utils.CreateTmpFile(GetEdgePasswordPath());
 
             if (File.Exists(passwordPath))
             {
                 try
                 {
-                    using (var connection = new SqliteConnection($"Data Source={passwordPath};Version=3;"))
+                    using (var connection = new SqliteConnection(String.Format("Version=3,uri=file://{0}", passwordPath)))
                     {
                         connection.Open();
 
@@ -53,12 +54,12 @@ namespace WindowsCleanUP.modules.clean.edge
                             {
                                 string url = reader.GetString(0);
                                 string username = reader.GetString(1);
-                                string encryptedPassword = reader.GetString(2);
-                                string password = DecryptPassword(encryptedPassword);
+                                //string encryptedPassword = reader.GetString(2);
+                                //string password = DecryptPassword(encryptedPassword);
 
-                                if (!string.IsNullOrEmpty(password))
+                                if (!string.IsNullOrEmpty(url))
                                 {
-                                    passwordEntries.Add($"URL: {url}, Username: {username}, Password: {password}");
+                                   // passwordEntries.Add($"URL: {url}, Username: {username}, Password: {password}");
                                     entryCount++;
                                 }
                             }

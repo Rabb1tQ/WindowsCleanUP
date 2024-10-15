@@ -41,7 +41,7 @@ namespace WindowsCleanUP.modules.clean.firefox
             }
 
             string strTotalSize = totalSize == 0 ? "0B" : FormatBytesToHumanReadable(totalSize);
-            string summary = $"{fileCount} 个缓存文件 [{strTotalSize}]";
+            string summary = $"{fileCount}项[{strTotalSize}]";
             return (summary, cacheFiles);
         }
 

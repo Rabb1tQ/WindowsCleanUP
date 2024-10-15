@@ -91,5 +91,19 @@ namespace WindowsCleanUP.utils
             }
         }
 
+        public static string CreateTmpFile(string dbfile)
+        {
+            try
+            {
+                string tempFile = Path.GetTempFileName();
+                File.Copy(dbfile, tempFile, true);
+                return tempFile;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.Sqlite;
+﻿
+using Community.CsharpSqlite.SQLiteClient;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,7 @@ namespace WindowsCleanUP.modules.clean.Chrome
         private static string GetChromeCookiePath()
         {
             return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                               "Google", "Chrome", "User Data", "Default", "Cookies");
+                               "Google", "Chrome", "User Data", "Default", "Network", "Cookies");
         }
 
         // 扫描 Chrome Cookies
@@ -25,7 +26,7 @@ namespace WindowsCleanUP.modules.clean.Chrome
             {
                 try
                 {
-                    using (var connection = new SqliteConnection($"Data Source={cookiePath};Version=3;"))
+                    using (var connection = new SqliteConnection(String.Format("Version=3,uri=file://{0}", cookiePath)))
                     {
                         connection.Open();
 
@@ -40,7 +41,7 @@ namespace WindowsCleanUP.modules.clean.Chrome
                                 string cookieValue = reader.GetString(2);
                                 long expiresUtc = reader.GetInt64(3);
 
-                                cookieEntries.Add($"Domain: {hostKey}, Name: {cookieName}, Value: {cookieValue}, Expires: {DateTimeOffset.FromUnixTimeMilliseconds(expiresUtc).UtcDateTime}");
+                                cookieEntries.Add($"Domain: {hostKey}");
                                 entryCount++;
                             }
                         }

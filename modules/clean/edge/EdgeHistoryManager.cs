@@ -1,7 +1,8 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using Community.CsharpSqlite.SQLiteClient;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using WindowsCleanUP.utils;
 
 namespace WindowsCleanUP.modules.clean.edge
 {
@@ -19,16 +20,17 @@ namespace WindowsCleanUP.modules.clean.edge
         {
             int entryCount = 0;
             List<string> historyEntries = new List<string>();
-            string historyPath = GetEdgeHistoryPath();
+            string historyPath = Utils.CreateTmpFile(GetEdgeHistoryPath());
 
             if (File.Exists(historyPath))
             {
                 try
                 {
-                    using (var connection = new SqliteConnection($"Data Source={historyPath};Version=3;"))
+                    using (var connection = new SqliteConnection(String.Format("Version=3,uri=file://{0}", historyPath)))
                     {
                         connection.Open();
-
+                        SqliteCommand drop = new SqliteCommand("DROP TABLE if EXISTS cluster_visit_duplicates;DROP TABLE if EXISTS clusters_and_visits;", connection);
+                        drop.ExecuteNonQuery();
                         string query = "SELECT url, title, visit_count FROM urls ORDER BY last_visit_time DESC";
                         using (var command = new SqliteCommand(query, connection))
                         using (var reader = command.ExecuteReader())
