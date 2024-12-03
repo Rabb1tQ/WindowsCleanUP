@@ -127,7 +127,7 @@ namespace WindowsCleanUP.utils
                 Console.WriteLine("找不到要删除的文件："+filePath);
             }
         }
-
+        
         public static string CreateTmpFile(string dbfile)
         {
             try
@@ -141,7 +141,7 @@ namespace WindowsCleanUP.utils
                 return null;
             }
         }
-
+        
 
         // 扫描下载文件夹中的文件
         public static string NormalizePath(string path)
@@ -153,7 +153,6 @@ namespace WindowsCleanUP.utils
             }
             return path;
         }
-
-
+        
     }
 }

@@ -1,9 +1,9 @@
-﻿using Community.CsharpSqlite.SQLiteClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using Community.CsharpSqlite.SQLiteClient;
 using WindowsCleanUP.utils;
 
 namespace WindowsCleanUP.modules.clean.Chrome
@@ -64,7 +64,7 @@ namespace WindowsCleanUP.modules.clean.Chrome
                                 try
                                 {
                                     string url = reader.GetString(0);
-                                    string username = reader.GetString(1);
+                                    // string username = reader.GetString(1);
                                     //string encryptedPassword = reader.GetString(2);
                                     //byte[] passwordBytes = (byte[])reader.GetValue(2);
                                     //string password = DecryptPassword(encryptedPassword);
@@ -78,7 +78,6 @@ namespace WindowsCleanUP.modules.clean.Chrome
                                 catch (Exception)
                                 {
                                     // 忽略单条记录读取错误
-                                    continue;
                                 }
                             }
                         }
@@ -99,22 +98,7 @@ namespace WindowsCleanUP.modules.clean.Chrome
         public static void CleanChromePasswords(List<string> files)
         {
             string passwordPath = GetChromePasswordPath();
-            if (File.Exists(passwordPath))
-            {
-                try
-                {
-                    File.Delete(passwordPath); // 删除密码数据库文件
-                    Console.WriteLine("保存的密码已清理。");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"无法清理保存的密码: {ex.Message}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("找不到密码数据库文件。");
-            }
+            Utils.deleteFile(passwordPath);
         }
     }
 }

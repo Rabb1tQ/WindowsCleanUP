@@ -25,9 +25,8 @@ namespace WindowsCleanUP.modules.clean.firefox
                 return null; // 处理任何可能的异常
             }
         }
+        
 
-        // 在应用程序启动时调用此方法，例如在 Main 方法中或者在应用程序启动的早期阶段
-        // 扫描 Firefox 的历史记录
         // 扫描Firefox历史记录
         public static (string Summary, List<string> HistoryList) ScanFirefoxHistory()
         {
@@ -35,11 +34,8 @@ namespace WindowsCleanUP.modules.clean.firefox
             List<string> historyUrls = new List<string>();
 
             // 获取Firefox历史记录数据库的路径
-            string profilePath = GetFirefoxProfilePath();
-
-            // 假设只有一个配置文件，实际情况可能需要处理多个配置文件
-            string historyDbPath = Path.Combine(profilePath, "places.sqlite");
-            historyDbPath = PatchWALDatabase(historyDbPath);
+            string historyDbPath = Path.Combine(GetFirefoxProfilePath(), "places.sqlite");
+            historyDbPath= PatchWALDatabase(historyDbPath);
             string summary = "0项";
             try
             {
@@ -69,8 +65,9 @@ namespace WindowsCleanUP.modules.clean.firefox
                 summary = $"{historyCount}项";
 
             }
-            catch
-            {
+
+
+            catch {
 
                 Console.WriteLine("未找到Firefox历史记录");
             }
@@ -79,69 +76,54 @@ namespace WindowsCleanUP.modules.clean.firefox
             return (summary, historyUrls);
         }
 
-        public static string PatchWALDatabase(string tempDBFile)
+        private static string PatchWALDatabase(string tempDBFile)
         {
-            // I couldn't figure out a safe way to open WAL enabled sqlite DBs (https://github.com/metacore/csharp-sqlite/issues/112)
-            // So we'll "patch" temporary DB files we're reading to disable WAL journaling
-            // Patch idea from here (https://stackoverflow.com/a/5476850)
-            // WARNING - Don't use this patch on live/production sqlite DB files, always create temp duplicates first then patch the copy
-            try
-            {
-                var offsets = new List<int> { 0x12, 0x13 };
+            var offsets = new List<int> { 0x12, 0x13 };
 
-                foreach (var n in offsets)
+            foreach (var n in offsets)
 
-                    using (var fs = new FileStream(tempDBFile, FileMode.Open, FileAccess.ReadWrite))
-                    {
-                        fs.Position = n;
-                        fs.WriteByte(Convert.ToByte(0x1));
-                    }
-                return tempDBFile;
-            }
-            catch (Exception)
-            {
-                // 如果复制失败，返回原始路径
-                return tempDBFile;
-            }
-
+                using (var fs = new FileStream(tempDBFile, FileMode.Open, FileAccess.ReadWrite))
+                {
+                    fs.Position = n;
+                    fs.WriteByte(Convert.ToByte(0x1));
+                }
+            return tempDBFile;
         }
+
 
 
 
         // 清理 Firefox 的历史记录
         public static void CleanFirefoxHistory(List<string> files)
         {
+
             try
             {
 
                 if (Directory.Exists(GetFirefoxProfilePath()))
                 {
                     var profileDirs = Directory.GetDirectories(GetFirefoxProfilePath());
-                    foreach (var profileDir in profileDirs)
-                    {
-                        string placesFilePath = Path.Combine(profileDir, "places.sqlite");
-                        if (File.Exists(placesFilePath))
-                        {
-                            try
-                            {
-                                // 清理历史记录
-                                using (var connection = new SqliteConnection($"Data Source={placesFilePath};"))
-                                {
-                                    connection.Open();
-                                    string query = "DELETE FROM moz_places";
-                                    using (var command = new SqliteCommand(query, connection))
-                                    {
-                                        command.ExecuteNonQuery();
-                                    }
-                                }
+                    string historyDbPath = Path.Combine(GetFirefoxProfilePath(), "places.sqlite");
+                    historyDbPath = PatchWALDatabase(historyDbPath);
 
-                                Console.WriteLine("历史记录已清理。");
-                            }
-                            catch (Exception ex)
+                    try
+                    {
+                        // 清理历史记录
+                        using (var connection = new SqliteConnection($"Data Source={historyDbPath};Version=3;"))
+                        {
+                            connection.Open();
+                            string query = "DELETE FROM moz_places";
+                            using (var command = new SqliteCommand(query, connection))
                             {
-                                Console.WriteLine($"清理历史记录时出错: {ex.Message}");
+                                command.ExecuteNonQuery();
                             }
                         }
+
+                        Console.WriteLine("历史记录已清理。");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"清理历史记录时出错: {ex.Message}");
                     }
                 }
                 else
@@ -149,10 +131,9 @@ namespace WindowsCleanUP.modules.clean.firefox
                     Console.WriteLine("未找到 Firefox 配置文件夹。");
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 // 如果发生任何未预期的错误，直接返回
-                return;
             }
         }
     }

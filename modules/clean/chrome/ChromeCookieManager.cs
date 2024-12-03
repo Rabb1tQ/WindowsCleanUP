@@ -29,7 +29,6 @@ namespace WindowsCleanUP.modules.clean.Chrome
             try
             {
                 int entryCount = 0;
-                List<string> cookieEntries = new List<string>();
                 string cookiePath = GetChromeCookiePath();
 
                 if (File.Exists(cookiePath))
@@ -39,7 +38,6 @@ namespace WindowsCleanUP.modules.clean.Chrome
                         using (var connection = new SqliteConnection(String.Format("Version=3,uri=file://{0}", cookiePath)))
                         {
                             connection.Open();
-
                             string query = "SELECT host_key, name, value, expires_utc FROM cookies";
                             using (var command = new SqliteCommand(query, connection))
                             using (var reader = command.ExecuteReader())
@@ -49,11 +47,11 @@ namespace WindowsCleanUP.modules.clean.Chrome
                                     try
                                     {
                                         string hostKey = reader.GetString(0);
-                                        string cookieName = reader.GetString(1);
-                                        string cookieValue = reader.GetString(2);
-                                        long expiresUtc = reader.GetInt64(3);
+                                        // string cookieName = reader.GetString(1);
+                                        // string cookieValue = reader.GetString(2);
+                                        // long expiresUtc = reader.GetInt64(3);
 
-                                        cookieEntries.Add($"Domain: {hostKey}");
+                                        // cookieEntries.Add($"Domain: {hostKey}");
                                         entryCount++;
                                     }
                                     catch (Exception)
@@ -74,7 +72,7 @@ namespace WindowsCleanUP.modules.clean.Chrome
                 }
 
                 string summary = $"{entryCount}项";
-                return (summary, cookieEntries);
+                return (summary, new List<string>());
             }
             catch (Exception)
             {

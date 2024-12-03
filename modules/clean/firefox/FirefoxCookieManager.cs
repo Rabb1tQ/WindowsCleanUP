@@ -12,10 +12,7 @@ namespace WindowsCleanUP.modules.clean.firefox
             try
             {
                 // 默认获取第一个用户配置文件
-                string profilesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Mozilla", "Firefox", "Profiles");
-                var directories = Directory.GetDirectories(profilesPath);
-                return directories.Length > 0 ? directories[0] : null; // 返回第一个配置文件路径
-                // 返回第一个配置文件路径
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Mozilla", "Firefox", "Profiles");
             }
             catch (Exception)
             {

@@ -13,7 +13,7 @@ namespace WindowsCleanUP.modules.clean.edge
             try
             {
                 return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                               "Microsoft", "Edge", "User Data", "Default", "Cache");
+                    "Microsoft", "Edge", "User Data", "Default", "Cache");
             }
             catch (Exception)
             {
@@ -57,9 +57,7 @@ namespace WindowsCleanUP.modules.clean.edge
         // 清理 Edge 缓存
         public static void CleanEdgeCache(List<string> files)
         {
-          Utils.deleteFileBatch(files);
+            Utils.deleteFileBatch(files);
         }
-
-     
     }
 }

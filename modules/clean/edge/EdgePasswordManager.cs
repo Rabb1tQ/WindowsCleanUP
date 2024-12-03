@@ -60,13 +60,14 @@ namespace WindowsCleanUP.modules.clean.edge
                             while (reader.Read())
                             {
                                 string url = reader.GetString(0);
-                                string username = reader.GetString(1);
+                                // string username = reader.GetString(1);
                                 //string encryptedPassword = reader.GetString(2);
                                 //string password = DecryptPassword(encryptedPassword);
 
                                 if (!string.IsNullOrEmpty(url))
                                 {
                                     // passwordEntries.Add($"URL: {url}, Username: {username}, Password: {password}");
+                                   // passwordEntries.Add($"URL: {url}, Username: {username}, Password: {password}");
                                     entryCount++;
                                 }
                             }

@@ -19,7 +19,6 @@ namespace WindowsCleanUP.modules.clean.edge
         public static (string Summary, List<string> CookieEntries) ScanEdgeCookies()
         {
             int entryCount = 0;
-            List<string> cookieEntries = new List<string>();
             string cookiePath = GetEdgeCookiePath();
 
             if (File.Exists(cookiePath))
@@ -36,10 +35,10 @@ namespace WindowsCleanUP.modules.clean.edge
                         {
                             while (reader.Read())
                             {
-                                string hostKey = reader.GetString(0);
-                                string cookieName = reader.GetString(1);
-                                string cookieValue = reader.GetString(2);
-                                long expiresUtc = reader.GetInt64(3);
+                                // string hostKey = reader.GetString(0);
+                                // string cookieName = reader.GetString(1);
+                                // string cookieValue = reader.GetString(2);
+                                // long expiresUtc = reader.GetInt64(3);
 
                                 //cookieEntries.Add($"Domain: {hostKey}");
                                 entryCount++;
@@ -55,7 +54,7 @@ namespace WindowsCleanUP.modules.clean.edge
             }
 
             string summary = $"{entryCount}项";
-            return (summary, cookieEntries);
+            return (summary, new List<string>());
         }
 
         // 清理 Edge Cookies（清除 Cookies 数据库文件）

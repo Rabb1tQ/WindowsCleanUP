@@ -51,7 +51,6 @@ namespace WindowsCleanUP.modules.clean.firefox
                             catch (Exception)
                             {
                                 // 忽略单个文件的访问错误
-                                continue;
                             }
                         }
                     }
