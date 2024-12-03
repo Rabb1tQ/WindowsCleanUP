@@ -61,6 +61,7 @@ namespace WindowsCleanUP.modules.clean.Chrome
                         {
                             while (reader.Read())
                             {
+<<<<<<< HEAD
                                 try
                                 {
                                     string url = reader.GetString(0);
@@ -79,6 +80,18 @@ namespace WindowsCleanUP.modules.clean.Chrome
                                 {
                                     // 忽略单条记录读取错误
                                     continue;
+=======
+                                string url = reader.GetString(0);
+                                string username = reader.GetString(1);
+                                //string encryptedPassword = reader.GetString(2);
+                                //byte[] passwordBytes = (byte[])reader.GetValue(2);
+                                //string password = DecryptPassword(encryptedPassword);
+
+                                if (!string.IsNullOrEmpty(url))
+                                {
+                                    //passwordEntries.Add($"URL: {url}, Username: {username}, Password: {password}");
+                                    entryCount++;
+>>>>>>> c3562df48416b0ebe8134276931f43acf1e6f74b
                                 }
                             }
                         }

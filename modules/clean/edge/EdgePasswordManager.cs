@@ -66,7 +66,11 @@ namespace WindowsCleanUP.modules.clean.edge
 
                                 if (!string.IsNullOrEmpty(url))
                                 {
+<<<<<<< HEAD
                                     // passwordEntries.Add($"URL: {url}, Username: {username}, Password: {password}");
+=======
+                                   // passwordEntries.Add($"URL: {url}, Username: {username}, Password: {password}");
+>>>>>>> c3562df48416b0ebe8134276931f43acf1e6f74b
                                     entryCount++;
                                 }
                             }

@@ -12,6 +12,7 @@ namespace WindowsCleanUP.modules.clean.Chrome
         // 获取 Chrome Cookie 数据库路径
         private static string GetChromeCookiePath()
         {
+<<<<<<< HEAD
             try
             {
                 return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
@@ -21,6 +22,10 @@ namespace WindowsCleanUP.modules.clean.Chrome
             {
                 return null;
             }
+=======
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                               "Google", "Chrome", "User Data", "Default", "Network", "Cookies");
+>>>>>>> c3562df48416b0ebe8134276931f43acf1e6f74b
         }
 
         // 扫描 Chrome Cookies
@@ -34,12 +39,17 @@ namespace WindowsCleanUP.modules.clean.Chrome
 
                 if (File.Exists(cookiePath))
                 {
+<<<<<<< HEAD
                     try
+=======
+                    using (var connection = new SqliteConnection(String.Format("Version=3,uri=file://{0}", cookiePath)))
+>>>>>>> c3562df48416b0ebe8134276931f43acf1e6f74b
                     {
                         using (var connection = new SqliteConnection(String.Format("Version=3,uri=file://{0}", cookiePath)))
                         {
                             connection.Open();
 
+<<<<<<< HEAD
                             string query = "SELECT host_key, name, value, expires_utc FROM cookies";
                             using (var command = new SqliteCommand(query, connection))
                             using (var reader = command.ExecuteReader())
@@ -62,6 +72,10 @@ namespace WindowsCleanUP.modules.clean.Chrome
                                         continue;
                                     }
                                 }
+=======
+                                cookieEntries.Add($"Domain: {hostKey}");
+                                entryCount++;
+>>>>>>> c3562df48416b0ebe8134276931f43acf1e6f74b
                             }
                         }
                     }

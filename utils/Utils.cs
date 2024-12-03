@@ -108,6 +108,7 @@ namespace WindowsCleanUP.utils
             }
         }
 
+<<<<<<< HEAD
         public static void deleteFile(string filePath)
         {
             if (File.Exists(filePath))
@@ -128,6 +129,8 @@ namespace WindowsCleanUP.utils
             }
         }
 
+=======
+>>>>>>> c3562df48416b0ebe8134276931f43acf1e6f74b
         public static string CreateTmpFile(string dbfile)
         {
             try
@@ -142,6 +145,7 @@ namespace WindowsCleanUP.utils
             }
         }
 
+<<<<<<< HEAD
 
         // 扫描下载文件夹中的文件
         public static string NormalizePath(string path)
@@ -155,5 +159,7 @@ namespace WindowsCleanUP.utils
         }
 
 
+=======
+>>>>>>> c3562df48416b0ebe8134276931f43acf1e6f74b
     }
 }

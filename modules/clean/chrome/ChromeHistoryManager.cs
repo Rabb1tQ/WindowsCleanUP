@@ -30,7 +30,11 @@ namespace WindowsCleanUP.modules.clean.Chrome
         {
             int entryCount = 0;
             List<string> historyEntries = new List<string>();
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> c3562df48416b0ebe8134276931f43acf1e6f74b
             string historyPath = Utils.CreateTmpFile(GetChromeHistoryPath());
 
             if (File.Exists(historyPath))

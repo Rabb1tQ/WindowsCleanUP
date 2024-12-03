@@ -62,7 +62,11 @@ namespace WindowsCleanUP.modules.clean.firefox
                 }
             }
 
+<<<<<<< HEAD
             string strTotalSize = totalSize == 0 ? "0B" : Utils.FormatBytesToHumanReadable(totalSize);
+=======
+            string strTotalSize = totalSize == 0 ? "0B" : FormatBytesToHumanReadable(totalSize);
+>>>>>>> c3562df48416b0ebe8134276931f43acf1e6f74b
             string summary = $"{fileCount}项[{strTotalSize}]";
             return (summary, cacheFiles);
         }
