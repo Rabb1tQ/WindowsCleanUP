@@ -82,14 +82,78 @@ namespace WindowsCleanUP.utils
             {
                 try
                 {
-                    File.Delete(file);
+                    if (File.Exists(file))
+                    {
+                        File.Delete(file);
+                    }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Console.WriteLine($"无法删除文件: {file}. 错误: {ex.Message}");
+                    // 如果删除失败，尝试使用长路径
+                    try
+                    {
+                        string longPath = Utils.NormalizePath(file);
+                        if (File.Exists(longPath))
+                        {
+                            File.Delete(longPath);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"无法删除文件: {file}. 错误: {ex.Message}");
+                        // 如果仍然无法删除，跳过该文件
+                        continue;
+                    }
                 }
             }
         }
+
+        public static void deleteFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                try
+                {
+                    File.Delete(filePath); // 删除历史记录数据库
+                    Console.WriteLine(filePath+"已清理。");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"无法清理文件：{filePath} {ex.Message}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("找不到要删除的文件："+filePath);
+            }
+        }
+
+        public static string CreateTmpFile(string dbfile)
+        {
+            try
+            {
+                string tempFile = Path.GetTempFileName();
+                File.Copy(dbfile, tempFile, true);
+                return tempFile;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+
+        // 扫描下载文件夹中的文件
+        public static string NormalizePath(string path)
+        {
+            // 添加长路径前缀 "\\?\" 来支持超过260个字符的路径
+            if (!path.StartsWith(@"\\?\"))
+            {
+                path = @"\\?\" + path;
+            }
+            return path;
+        }
+
 
     }
 }

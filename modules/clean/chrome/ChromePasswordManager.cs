@@ -1,9 +1,10 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using Community.CsharpSqlite.SQLiteClient;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using WindowsCleanUP.utils;
 
 namespace WindowsCleanUP.modules.clean.Chrome
 {
@@ -12,8 +13,15 @@ namespace WindowsCleanUP.modules.clean.Chrome
         // 获取 Chrome 密码数据库路径
         private static string GetChromePasswordPath()
         {
-            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            try
+            {
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                                "Google", "Chrome", "User Data", "Default", "Login Data");
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         // 解密 Chrome 密码
@@ -37,13 +45,13 @@ namespace WindowsCleanUP.modules.clean.Chrome
         {
             int entryCount = 0;
             List<string> passwordEntries = new List<string>();
-            string passwordPath = GetChromePasswordPath();
+            string passwordPath = Utils.CreateTmpFile(GetChromePasswordPath());
 
             if (File.Exists(passwordPath))
             {
                 try
                 {
-                    using (var connection = new SqliteConnection($"Data Source={passwordPath};Version=3;"))
+                    using (var connection = new SqliteConnection(String.Format("Version=3,uri=file://{0}", passwordPath)))
                     {
                         connection.Open();
 
@@ -53,15 +61,24 @@ namespace WindowsCleanUP.modules.clean.Chrome
                         {
                             while (reader.Read())
                             {
-                                string url = reader.GetString(0);
-                                string username = reader.GetString(1);
-                                string encryptedPassword = reader.GetString(2);
-                                string password = DecryptPassword(encryptedPassword);
-
-                                if (!string.IsNullOrEmpty(password))
+                                try
                                 {
-                                    passwordEntries.Add($"URL: {url}, Username: {username}, Password: {password}");
-                                    entryCount++;
+                                    string url = reader.GetString(0);
+                                    string username = reader.GetString(1);
+                                    //string encryptedPassword = reader.GetString(2);
+                                    //byte[] passwordBytes = (byte[])reader.GetValue(2);
+                                    //string password = DecryptPassword(encryptedPassword);
+
+                                    if (!string.IsNullOrEmpty(url))
+                                    {
+                                        //passwordEntries.Add($"URL: {url}, Username: {username}, Password: {password}");
+                                        entryCount++;
+                                    }
+                                }
+                                catch (Exception)
+                                {
+                                    // 忽略单条记录读取错误
+                                    continue;
                                 }
                             }
                         }
@@ -70,6 +87,7 @@ namespace WindowsCleanUP.modules.clean.Chrome
                 catch (Exception ex)
                 {
                     Console.WriteLine($"扫描保存的密码时出错: {ex.Message}");
+                    return ("0项", new List<string>());
                 }
             }
 

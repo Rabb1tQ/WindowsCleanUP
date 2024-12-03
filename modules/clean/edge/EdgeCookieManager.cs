@@ -1,7 +1,8 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using Community.CsharpSqlite.SQLiteClient;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using WindowsCleanUP.utils;
 
 namespace WindowsCleanUP.modules.clean.edge
 {
@@ -11,7 +12,7 @@ namespace WindowsCleanUP.modules.clean.edge
         private static string GetEdgeCookiePath()
         {
             return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-                               "Microsoft", "Edge", "User Data", "Default", "Cookies");
+                               "Microsoft", "Edge", "User Data", "Default", "Network", "Cookies");
         }
 
         // 扫描 Edge Cookies
@@ -25,7 +26,7 @@ namespace WindowsCleanUP.modules.clean.edge
             {
                 try
                 {
-                    using (var connection = new SqliteConnection($"Data Source={cookiePath};Version=3;"))
+                    using (var connection = new SqliteConnection(String.Format("Version=3,uri=file://{0}", cookiePath)))
                     {
                         connection.Open();
 
@@ -40,7 +41,7 @@ namespace WindowsCleanUP.modules.clean.edge
                                 string cookieValue = reader.GetString(2);
                                 long expiresUtc = reader.GetInt64(3);
 
-                                cookieEntries.Add($"Domain: {hostKey}, Name: {cookieName}, Value: {cookieValue}, Expires: {DateTimeOffset.FromUnixTimeMilliseconds(expiresUtc).UtcDateTime}");
+                                //cookieEntries.Add($"Domain: {hostKey}");
                                 entryCount++;
                             }
                         }
@@ -49,6 +50,7 @@ namespace WindowsCleanUP.modules.clean.edge
                 catch (Exception ex)
                 {
                     Console.WriteLine($"扫描 Cookies 时出错: {ex.Message}");
+                    return ("0项", new List<string>());
                 }
             }
 
@@ -60,22 +62,7 @@ namespace WindowsCleanUP.modules.clean.edge
         public static void CleanEdgeCookies(List<string> files)
         {
             string cookiePath = GetEdgeCookiePath();
-            if (File.Exists(cookiePath))
-            {
-                try
-                {
-                    File.Delete(cookiePath); // 删除 Cookies 数据库文件
-                    Console.WriteLine("Cookies 已清理。");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"无法清理 Cookies: {ex.Message}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("找不到 Cookies 数据库文件。");
-            }
+            Utils.deleteFile(cookiePath);
         }
     }
 }

@@ -10,8 +10,15 @@ namespace WindowsCleanUP.modules.clean.edge
         // 获取 Edge 更新缓存路径
         private static string GetEdgeUpdateCachePath()
         {
-            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            try
+            {
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                                "Microsoft", "Edge", "Update");
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         // 扫描 Edge 更新缓存
@@ -38,6 +45,7 @@ namespace WindowsCleanUP.modules.clean.edge
                 catch (Exception ex)
                 {
                     Console.WriteLine($"扫描更新缓存时出错: {ex.Message}");
+                    return ("0项[0B]", new List<string>());
                 }
             }
 
@@ -49,18 +57,7 @@ namespace WindowsCleanUP.modules.clean.edge
         // 清理 Edge 更新缓存
         public static void CleanEdgeUpdateCache(List<string> files)
         {
-            foreach (var file in files)
-            {
-                try
-                {
-                    File.Delete(file); // 删除文件
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"无法删除文件 {file}: {ex.Message}");
-                }
-            }
-            Console.WriteLine("更新缓存已清理。");
+           Utils.deleteFileBatch(files);
         }
 
 

@@ -1,7 +1,10 @@
-﻿using Microsoft.Data.Sqlite;
+﻿
+using Community.CsharpSqlite.SQLiteClient;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using WindowsCleanUP.utils;
 
 
 namespace WindowsCleanUP.modules.clean.Chrome
@@ -11,8 +14,15 @@ namespace WindowsCleanUP.modules.clean.Chrome
         // 获取 Chrome 历史记录数据库路径
         private static string GetChromeHistoryPath()
         {
-            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            try
+            {
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                                "Google", "Chrome", "User Data", "Default", "History");
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         // 扫描 Chrome 历史记录
@@ -20,27 +30,37 @@ namespace WindowsCleanUP.modules.clean.Chrome
         {
             int entryCount = 0;
             List<string> historyEntries = new List<string>();
-            string historyPath = GetChromeHistoryPath();
+
+            string historyPath = Utils.CreateTmpFile(GetChromeHistoryPath());
 
             if (File.Exists(historyPath))
             {
                 try
                 {
-                    using (var connection = new SqliteConnection($"Data Source={historyPath};Version=3;"))
+                    using (var connection = new SqliteConnection(String.Format("Version=3,uri=file://{0}", historyPath)))
                     {
                         connection.Open();
-
+                        SqliteCommand drop = new SqliteCommand("DROP TABLE if EXISTS cluster_visit_duplicates;DROP TABLE if EXISTS clusters_and_visits;", connection);
+                        drop.ExecuteNonQuery();
                         string query = "SELECT url, title, visit_count FROM urls ORDER BY last_visit_time DESC";
                         using (var command = new SqliteCommand(query, connection))
                         using (var reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                string url = reader.GetString(0);
-                                string title = reader.GetString(1);
-                                int visitCount = reader.GetInt32(2);
-                                historyEntries.Add($"URL: {url}, Title: {title}, Visit Count: {visitCount}");
-                                entryCount++;
+                                try
+                                {
+                                    string url = reader.GetString(0);
+                                    string title = reader.GetString(1);
+                                    int visitCount = reader.GetInt32(2);
+                                    historyEntries.Add($"URL: {url}, Title: {title}, Visit Count: {visitCount}");
+                                    entryCount++;
+                                }
+                                catch (Exception)
+                                {
+                                    // 忽略单条记录读取错误
+                                    continue;
+                                }
                             }
                         }
                     }
@@ -48,6 +68,7 @@ namespace WindowsCleanUP.modules.clean.Chrome
                 catch (Exception ex)
                 {
                     Console.WriteLine($"扫描历史记录时出错: {ex.Message}");
+                    return ("0项", new List<string>());
                 }
             }
 
@@ -59,22 +80,7 @@ namespace WindowsCleanUP.modules.clean.Chrome
         public static void CleanChromeHistory(List<string> files)
         {
             string historyPath = GetChromeHistoryPath();
-            if (File.Exists(historyPath))
-            {
-                try
-                {
-                    File.Delete(historyPath); // 删除历史记录数据库
-                    Console.WriteLine("历史记录已清理。");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"无法清理历史记录: {ex.Message}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("找不到历史记录文件。");
-            }
+            Utils.deleteFile(historyPath);
         }
     }
 }

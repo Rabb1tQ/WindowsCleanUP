@@ -1,5 +1,4 @@
-﻿using Microsoft.Data.Sqlite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using WindowsCleanUP.utils;
@@ -8,7 +7,21 @@ namespace WindowsCleanUP.modules.clean.firefox
 {
     internal class FirefoxCookieManager
     {
-        private static readonly string FirefoxProfilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Mozilla", "Firefox", "Profiles");
+        private static string GetFirefoxProfilePath()
+        {
+            try
+            {
+                // 默认获取第一个用户配置文件
+                string profilesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Mozilla", "Firefox", "Profiles");
+                var directories = Directory.GetDirectories(profilesPath);
+                return directories.Length > 0 ? directories[0] : null; // 返回第一个配置文件路径
+                // 返回第一个配置文件路径
+            }
+            catch (Exception)
+            {
+                return null; // 处理任何可能的异常
+            }
+        }
 
         // 扫描Firefox的cookie文件
         public static (string Summary, List<string> CookieFiles) ScanFirefoxCookies()
@@ -18,19 +31,27 @@ namespace WindowsCleanUP.modules.clean.firefox
             List<string> cookieFiles = new List<string>();
 
             // 查找Firefox配置文件夹
-            if (Directory.Exists(FirefoxProfilePath))
+            if (Directory.Exists(GetFirefoxProfilePath()))
             {
-                var profileDirs = Directory.GetDirectories(FirefoxProfilePath);
-                foreach (var profileDir in profileDirs)
+                try
                 {
-                    string cookiesFilePath = Path.Combine(profileDir, "cookies.sqlite");
-                    if (File.Exists(cookiesFilePath))
+                    var profileDirs = Directory.GetDirectories(GetFirefoxProfilePath());
+                    foreach (var profileDir in profileDirs)
                     {
-                        FileInfo fileInfo = new FileInfo(cookiesFilePath);
-                        cookieFiles.Add(cookiesFilePath);
-                        totalSize += fileInfo.Length;
-                        fileCount++;
+                        string cookiesFilePath = Path.Combine(profileDir, "cookies.sqlite");
+                        if (File.Exists(cookiesFilePath))
+                        {
+                            FileInfo fileInfo = new FileInfo(cookiesFilePath);
+                            cookieFiles.Add(cookiesFilePath);
+                            totalSize += fileInfo.Length;
+                            fileCount++;
+                        }
                     }
+                }
+                catch (Exception)
+                {
+                    // 如果无法访问配置文件夹，返回空结果
+                    return ("0项", new List<string>());
                 }
             }
 

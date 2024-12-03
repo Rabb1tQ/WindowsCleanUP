@@ -9,30 +9,28 @@ namespace WindowsCleanUP.modules.clean.systemgarbage
 {
     public static class RecentFileForeverLabel
     {
-        public static (string Summary, List<string> FileList) ScanRecentDocuments()
+        public static (string Summary, List<string>) ScanRecentDocuments()
         {
             string recentDocsFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Recent);
             string[] lnkFiles = Directory.GetFiles(recentDocsFolderPath, "*.lnk");
             int fileCount = 0;
             long totalSize = 0;
-            List<string> targetFiles = new List<string>(); // 存储目标文件路径
+            List<string> shortcutFiles = new List<string>(); // 存储快捷方式文件路径
 
             foreach (var lnkFile in lnkFiles)
             {
                 string targetPath = GetShortcutTargetFile(lnkFile);
-                if (!string.IsNullOrEmpty(targetPath) && System.IO.File.Exists(targetPath))
-                {
-                    FileInfo fileInfo = new FileInfo(targetPath);
-                    totalSize += fileInfo.Length;
-                    fileCount++;
-                    targetFiles.Add(targetPath); // 添加目标文件到列表
-                }
+
+                FileInfo fileInfo = new FileInfo(lnkFile);
+                totalSize += fileInfo.Length;
+                fileCount++;
+                shortcutFiles.Add(lnkFile); // 添加快捷方式文件到列表
             }
 
             string strTotalSize = FormatFileSize(totalSize);
             string summary = $"{fileCount}项[{strTotalSize}]";
 
-            return (summary, targetFiles); // 返回统计信息和目标文件列表
+            return (summary, shortcutFiles); // 返回统计信息和快捷方式文件列表
         }
 
         private static string GetShortcutTargetFile(string shortcutPath)
@@ -56,10 +54,10 @@ namespace WindowsCleanUP.modules.clean.systemgarbage
             return string.Format("{0:0.##} {1}", formattedSize, sizes[order]);
         }
 
-        public static void ClearRecentDocuments(List<string> files)
+        public static void ClearRecentDocuments(List<string> shortcutFiles)
         {
             // 清除“最近的文档”快捷方式
-            Utils.deleteFileBatch(files);
+            Utils.deleteFileBatch(shortcutFiles);
 
             // 清除注册表中“最近的文档”的条目
             ClearRecentDocsRegistry();
@@ -85,6 +83,4 @@ namespace WindowsCleanUP.modules.clean.systemgarbage
             }
         }
     }
-
-
 }

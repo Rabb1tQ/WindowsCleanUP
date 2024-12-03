@@ -1,9 +1,10 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using Community.CsharpSqlite.SQLiteClient;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using WindowsCleanUP.utils;
 
 namespace WindowsCleanUP.modules.clean.edge
 {
@@ -12,8 +13,15 @@ namespace WindowsCleanUP.modules.clean.edge
         // 获取 Edge 密码数据库路径
         private static string GetEdgePasswordPath()
         {
-            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            try
+            {
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                                "Microsoft", "Edge", "User Data", "Default", "Login Data");
+            }
+            catch
+            {
+                return string.Empty;
+            }
         }
 
         // 解密 Edge 密码
@@ -35,13 +43,13 @@ namespace WindowsCleanUP.modules.clean.edge
         {
             int entryCount = 0;
             List<string> passwordEntries = new List<string>();
-            string passwordPath = GetEdgePasswordPath();
+            string passwordPath = Utils.CreateTmpFile(GetEdgePasswordPath());
 
             if (File.Exists(passwordPath))
             {
                 try
                 {
-                    using (var connection = new SqliteConnection($"Data Source={passwordPath};Version=3;"))
+                    using (var connection = new SqliteConnection(String.Format("Version=3,uri=file://{0}", passwordPath)))
                     {
                         connection.Open();
 
@@ -53,12 +61,12 @@ namespace WindowsCleanUP.modules.clean.edge
                             {
                                 string url = reader.GetString(0);
                                 string username = reader.GetString(1);
-                                string encryptedPassword = reader.GetString(2);
-                                string password = DecryptPassword(encryptedPassword);
+                                //string encryptedPassword = reader.GetString(2);
+                                //string password = DecryptPassword(encryptedPassword);
 
-                                if (!string.IsNullOrEmpty(password))
+                                if (!string.IsNullOrEmpty(url))
                                 {
-                                    passwordEntries.Add($"URL: {url}, Username: {username}, Password: {password}");
+                                    // passwordEntries.Add($"URL: {url}, Username: {username}, Password: {password}");
                                     entryCount++;
                                 }
                             }
@@ -68,6 +76,7 @@ namespace WindowsCleanUP.modules.clean.edge
                 catch (Exception ex)
                 {
                     Console.WriteLine($"扫描保存的密码时出错: {ex.Message}");
+                    return ("0项", new List<string>());
                 }
             }
 
@@ -79,22 +88,7 @@ namespace WindowsCleanUP.modules.clean.edge
         public static void CleanEdgePasswords(List<string> files)
         {
             string passwordPath = GetEdgePasswordPath();
-            if (File.Exists(passwordPath))
-            {
-                try
-                {
-                    File.Delete(passwordPath); // 删除密码数据库文件
-                    Console.WriteLine("保存的密码已清理。");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"无法清理保存的密码: {ex.Message}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("找不到密码数据库文件。");
-            }
+            Utils.deleteFile(passwordPath);
         }
     }
 }
